@@ -1,0 +1,2634 @@
+--Starting up.
+--Command line: /home/prasadk27/Desktop/ECE_611/project/SMTSIM/smtsim/build.linux-amd64/smtsim -conffile /home/prasadk27/Desktop/ECE_611/project/bench_for_smtsim/workloads-list_ffs0.conf -confexpr 'Syscall/root_paths_at_cwd = t;' -confexpr 'Syscall/ForceUniqueNames = { "fort.11"; };' -confexpr 'AppStatsLog/enable = t;' -confexpr 'AppStatsLog/interval = 10e3;' -confexpr 'AppStatsLog/base_name = "/home/prasadk27/Desktop/ECE_611/project/output_files_all/crafty8";' -confexpr 'AppStatsLog/stat_mask/all = f;' -confexpr 'AppStatsLog/stat_mask/cyc = t;' -confexpr 'AppStatsLog/stat_mask/commits = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_hr = t;' -confexpr 'AppStatsLog/stat_mask/mem_delay = t;' -confexpr 'AppStatsLog/stat_mask/itlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/dtlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/icache_acc = t;' -confexpr 'AppStatsLog/stat_mask/dcache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l2cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/bpred_acc = t;' -confexpr 'AppStatsLog/stat_mask/fpalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/intalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/ldst_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_acc = t;' -confexpr 'AppStatsLog/stat_mask/iq_acc = t;' -confexpr 'AppStatsLog/stat_mask/fq_acc = t;' -confexpr 'AppStatsLog/stat_mask/ireg_acc = t;' -confexpr 'AppStatsLog/stat_mask/freg_acc = t;' -confexpr 'AppStatsLog/stat_mask/iren_acc = t;' -confexpr 'AppStatsLog/stat_mask/fren_acc = t;' -confexpr 'AppStatsLog/stat_mask/rob_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_occ = t;' -confexpr 'AppStatsLog/stat_mask/iq_occ = t;' -confexpr 'AppStatsLog/stat_mask/fq_occ = t;' -confexpr 'AppStatsLog/stat_mask/ireg_occ = t;' -confexpr 'AppStatsLog/stat_mask/freg_occ = t;' -confexpr 'AppStatsLog/stat_mask/iren_occ = t;' -confexpr 'AppStatsLog/stat_mask/fren_occ = t;' -confexpr 'AppStatsLog/stat_mask/rob_occ = t;' -confexpr 'Workloads/crafty/ff_dist = 1.000000e+07;' -confexpr 'WorkQueue/Jobs/job_1 = { start_time = 0.; workload = "crafty"};' -confexpr 'WorkQueue/max_running_jobs = 1;' -confexpr 'Global/thread_length = 1.000000e+07;' -confexpr 'Global/num_cores = 1;' -confexpr 'Global/num_contexts = 1;' -confexpr 'Global/ThreadCoreMap/t0 = 0;' -confexpr 'Global/Mem/private_l2caches = t;' -confexpr 'Global/Mem/L2Cache/size_kb = 128;' -confexpr 'Global/Mem/L2Cache/assoc = 4;' -confexpr 'Global/Mem/L2Cache/access_time = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/L2Cache/access_time_wb = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/use_l3cache = t;' -confexpr 'Global/Mem/L3Cache/size_kb = 4096;' -confexpr 'Global/Mem/L3Cache/assoc = 16;' -confexpr 'Global/Mem/L3Cache/access_time = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/L3Cache/access_time_wb = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/MainMem/read_time = { latency = 250; interval = 100; };' -confexpr 'Global/Mem/MainMem/write_time = { latency = 250; interval = 100; };' -confexpr 'Core/ICache/size_kb = 64;' -confexpr 'Core/ICache/assoc = 1;' -confexpr 'Core/ICache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/ICache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/DCache/size_kb = 64;' -confexpr 'Core/DCache/assoc = 1;' -confexpr 'Core/DCache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/DCache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/loadstore_queue_size = 24;' -confexpr 'Core/Queue/int_queue_size = 32;' -confexpr 'Core/Queue/float_queue_size = 32;' -confexpr 'Core/Fetch/single_limit = 8;' -confexpr 'Core/Fetch/total_limit = 8;' -confexpr 'Core/Commit/single_limit = 4;' -confexpr 'Core/Commit/total_limit = 4;' -confexpr 'Core/Queue/max_int_issue = 2;' -confexpr 'Core/Queue/max_float_issue = 1;' -confexpr 'Core/Queue/max_ldst_issue = 1;' -confexpr 'Core/Rename/int_rename_regs = 64;' -confexpr 'Core/Rename/float_rename_regs = 64;' -confexpr 'Thread/reorder_buffer_size = 64;' -confexpr 'Thread/active_list_size = 512;' -confexpr 'ResourcePooling/enable = f;' -confdump -
+--Host: ubuntu, pid: 3144
+--Working directory: /home/prasadk27/Desktop/ECE_611/project/bench_for_smtsim
+--Local time: Sun May  1 22:52:36 2016
+--Unix time: 1462157556
+--Note: DEBUG support was compiled in.  Assertions are enabled.
+--Loading built-in configuration.
+Loading config file "/home/prasadk27/Desktop/ECE_611/project/bench_for_smtsim/workloads-list_ffs0.conf"...
+Writing config file "-"...
+--------
+AppStatsLog = {
+  base_name = "/home/prasadk27/Desktop/ECE_611/project/output_files_all/crafty8";
+  enable = t;
+  interval = 10000.;
+  stat_mask = {
+    all = f;
+    app_insts_committed = f;
+    bpred_acc = t;
+    bpred_hr = f;
+    commits = t;
+    cyc = t;
+    dcache_acc = t;
+    dcache_blocks = f;
+    dcache_hr = f;
+    dtlb_acc = t;
+    dtlb_hr = f;
+    fpalu_acc = t;
+    fq_acc = t;
+    fq_occ = t;
+    freg_acc = t;
+    freg_occ = t;
+    fren_acc = t;
+    fren_occ = t;
+    icache_acc = t;
+    icache_blocks = f;
+    icache_hr = f;
+    intalu_acc = t;
+    iq_acc = t;
+    iq_conf = f;
+    iq_occ = t;
+    ireg_acc = t;
+    ireg_occ = t;
+    iren_acc = t;
+    iren_occ = t;
+    itlb_acc = t;
+    itlb_hr = f;
+    l2cache_acc = t;
+    l2cache_blocks = f;
+    l2cache_hr = f;
+    l3cache_acc = t;
+    l3cache_blocks = f;
+    l3cache_hr = t;
+    ldst_acc = t;
+    long_mem_detects = f;
+    long_mem_flushes = f;
+    lsq_acc = t;
+    lsq_occ = t;
+    mem_commits = f;
+    mem_delay = t;
+    retpred_hr = f;
+    rob_acc = t;
+    rob_occ = t;
+    sched_count = f;
+    sched_cyc = f;
+  };
+};
+BasicBlockTracker = {
+  create_bbv_file = f;
+  filename = "";
+  interval = 2e+08;
+};
+Core = {
+  Commit = {
+    single_limit = 4;
+    thread_count_limit = 2;
+    total_limit = 4;
+  };
+  DCache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 1;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 64;
+    track_coher_misses = t;
+    wb_buffer_size = 16;
+  };
+  DataDeadBlock = {
+    dead_block_assoc = 8;
+    dead_block_entries = 1024;
+    enable = f;
+    hist_update_at_commit = f;
+    hist_width = 32;
+  };
+  DataMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  DataStreambuf = {
+    alloc_min_confidence_thresh = 1;
+    always_free_on_match = t;
+    blocks_per_stream = 4;
+    enable = f;
+    force_no_overlap = t;
+    n_streams = 8;
+    predict_match_saturate = 8;
+    predict_miss_saturate = 8;
+    prefetch_as_exclusive = t;
+    prefetch_only_when_quiet = t;
+    stream_priority_age_allocs = 10;
+    stream_priority_saturate = 13;
+    stride_pc_assoc = 4;
+    stride_pc_entries = 256;
+    use_round_robin_sched = f;
+    use_two_miss_alloc_filter = f;
+  };
+  Decode = {
+    n_stages = 1;
+  };
+  ExecTime = {
+    all_extra = 0;
+    fp_arith = 4;
+    fp_bit = 4;
+    fp_compare = 4;
+    fp_condbr = 1;
+    fp_condmove = 4;
+    fp_divs = 17;
+    fp_divt = 30;
+    fp_load = 1;
+    fp_store = 1;
+    ftoi = 2;
+    int_arith = 1;
+    int_compare = 0;
+    int_condbr = 1;
+    int_condmove = 2;
+    int_load = 1;
+    int_mull = 8;
+    int_mulq = 16;
+    int_store = 1;
+    int_umulh = 16;
+    itof = 2;
+    smt_fork = 1;
+    smt_lockrel = 1;
+    smt_terminate = 4;
+    uncond_br = 2;
+  };
+  Fetch = {
+    enable_trace_cache = f;
+    n_stages = 1;
+    single_limit = 8;
+    tcache_skips_to_rename = f;
+    thread_count_limit = 2;
+    total_limit = 8;
+  };
+  ICache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 1;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 64;
+    wb_buffer_size = 16;
+  };
+  InstMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  L2Cache = {
+  };
+  L2MSHR = {
+    entry_count = 32;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 4;
+  };
+  MultiBranchPredictor = {
+    n_rows = 2048;
+    predict_width = 3;
+  };
+  Queue = {
+    float_ooo_issue = t;
+    float_queue_size = 32;
+    int_ooo_issue = t;
+    int_queue_size = 32;
+    max_float_issue = 1;
+    max_int_issue = 2;
+    max_ldst_issue = 1;
+    max_sync_issue = 2;
+  };
+  RegRead = {
+    n_stages = 1;
+  };
+  RegWrite = {
+    n_stages = 1;
+  };
+  Rename = {
+    float_rename_regs = 64;
+    int_rename_regs = 64;
+    n_stages = 1;
+  };
+  TraceCache = {
+    assoc = 4;
+    block_insts = 8;
+    is_path_assoc = t;
+    n_entries = 2048;
+    pred_per_block = 3;
+    trim_partial_hits = f;
+  };
+  TraceFillUnit = {
+    align_to_bblock = t;
+    allow_indirect_jumps = t;
+    branch_promote_thresh = 64;
+    output_fifo_len = 10;
+    output_interval = 1;
+  };
+  br_bias_entries = 2048;
+  btb_assoc = 4;
+  btb_entries = 256;
+  dtlb_entries = 128;
+  itlb_entries = 48;
+  loadstore_queue_size = 24;
+  pht_entries = 2048;
+  tlb_filter_invalid = t;
+  tlb_miss_penalty = 160;
+};
+Debug = {
+};
+Global = {
+  Mem = {
+    Coher = {
+      apply_evict_notifies = t;
+      prefer_neighbor_shared = t;
+    };
+    L2Cache = {
+      access_time = {
+        interval = 2;
+        latency = 10;
+      };
+      access_time_wb = {
+        interval = 2;
+        latency = 10;
+      };
+      assoc = 4;
+      fill_time = {
+        interval = 2;
+        latency = 4;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 128;
+      track_coher_misses = t;
+      wb_buffer_size = 16;
+    };
+    L3Cache = {
+      access_time = {
+        interval = 8;
+        latency = 20;
+      };
+      access_time_wb = {
+        interval = 8;
+        latency = 20;
+      };
+      assoc = 16;
+      fill_time = {
+        interval = 8;
+        latency = 20;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 4096;
+      wb_buffer_size = 16;
+    };
+    MainMem = {
+      n_banks = 16;
+      read_time = {
+        interval = 100;
+        latency = 250;
+      };
+      write_time = {
+        interval = 100;
+        latency = 250;
+      };
+    };
+    bus_request_time = {
+      interval = 1;
+      latency = 1;
+    };
+    bus_transfer_time = {
+      interval = 2;
+      latency = 4;
+    };
+    cache_block_bytes = 64;
+    cache_request_holders = 256;
+    inst_bytes = 4;
+    page_bytes = 8192;
+    private_l2caches = t;
+    split_bus = f;
+    stack_initial_kb = 64;
+    stack_max_kb = 65536;
+    use_coherence = f;
+    use_l3cache = t;
+  };
+  ThreadCoreMap = {
+    policy = "smt";
+    t0 = 0;
+  };
+  abort_on_alist_full = t;
+  disable_coredump = t;
+  nice_level = 19;
+  num_contexts = 1;
+  num_cores = 1;
+  reap_alist_at_squash = t;
+  thread_length = 1e+07;
+};
+GlobalCtxSchedLog = {
+};
+GlobalLongMemLog = {
+};
+GlobalMemProfiler = {
+  enable = f;
+  log_at_commit = t;
+  log_dstream = t;
+  log_istream = t;
+  log_name = "memprof.gz";
+};
+Hacking = {
+  L1MSHRPartition = {
+    enable = f;
+    max_prefetch_producers = 12;
+  };
+  MutableMap = {
+  };
+  StaticAffin = {
+    force_sched = f;
+  };
+  StaticSched = {
+    allow_missing_apps = f;
+  };
+  consider_late_flush = f;
+  csched_deduct_nonrun = t;
+  flush_past_long_loads = f;
+  flush_past_long_stores = f;
+  inhibit_solo_flush = t;
+  inst_spill_fill = t;
+  inst_spill_fill_early = f;
+  long_mem_at_commit = t;
+  long_mem_cyc = 25;
+  min_swapin_commits = 1.;
+  min_swapin_cyc = 0.;
+  perfect_branch_pred = f;
+  perfect_tlbs = f;
+  print_appmgr_stats = t;
+  sched_app = "OldestApp";
+  sched_ctx = "FirstIdle";
+  spill_dirty_only = f;
+  spill_dtlb_missonly = f;
+  spill_dtlb_size = 0;
+  spill_ghr = f;
+  spill_retstack_size = 0;
+  swap = "IfProcFull";
+  swap_suppress_guess = f;
+  swapgate_deduct_nonrun = t;
+  swapgate_deduct_swapout = f;
+  thread_swapin_cyc = 20;
+  thread_swapout_cyc = 20;
+};
+ResourcePooling = {
+  enable = f;
+  limit_policy = "LIMIT75";
+  order_policy = "FIXED";
+  share_all = f;
+  share_fq = t;
+  share_fregs = t;
+  share_iq = t;
+  share_iregs = t;
+  share_lsq = t;
+  share_rob = t;
+};
+Syscall = {
+  ForceUniqueNames = {
+    "fort.11" = t;
+  };
+  report_resize_failures = t;
+  root_paths_at_cwd = t;
+  sanitize_host_device_info = t;
+  uniquify_to_subdir = t;
+};
+Thread = {
+  active_list_size = 512;
+  discard_static_noops = t;
+  reorder_buffer_size = 64;
+  retstack_entries = 12;
+};
+WorkQueue = {
+  Jobs = {
+    job_1 = {
+      start_time = 0.;
+      workload = "crafty";
+    };
+  };
+  enable = t;
+  exit_on_app_exit = t;
+  max_running_jobs = 1;
+  verbose_sched = t;
+};
+Workloads = {
+  GemsFDTD_06 = {
+    argv = {
+      _0 = "GemsFDTD_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "ref.log";
+  };
+  ammp = {
+    argv = {
+      _0 = "ammp";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ammp.in";
+    stdout = "ammp.out";
+  };
+  applu = {
+    argv = {
+      _0 = "applu";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "applu.in";
+    stdout = "applu.out";
+  };
+  apsi = {
+    argv = {
+      _0 = "apsi";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "apsi.in";
+    stdout = "apsi.out";
+  };
+  art_110 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "110";
+      _11 = "-starty";
+      _12 = "200";
+      _13 = "-endx";
+      _14 = "160";
+      _15 = "-endy";
+      _16 = "240";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.1.out";
+  };
+  art_470 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "470";
+      _11 = "-starty";
+      _12 = "140";
+      _13 = "-endx";
+      _14 = "520";
+      _15 = "-endy";
+      _16 = "180";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.2.out";
+  };
+  astar_06_rivers = {
+    argv = {
+      _0 = "astar_base.metallica";
+      _1 = "rivers.cfg";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "rivers.out";
+  };
+  bisort_med = {
+    argv = {
+      _0 = "bisort";
+      _1 = "2500000";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "bt.big" = {
+    argv = {
+      _0 = "bt.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  bwaves_06 = {
+    argv = {
+      _0 = "bwaves_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  bzip2_06_chicken = {
+    argv = {
+      _0 = "bzip2_base.metallica";
+      _1 = "chicken.jpg";
+      _2 = "30";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "chicken.jpg.out";
+  };
+  bzip2_graphic = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-graphic.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-graphic.out";
+  };
+  bzip2_program = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-program.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-program.out";
+  };
+  bzip2_source = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-source.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-source.out";
+  };
+  cactusADM_06 = {
+    argv = {
+      _0 = "cactusADM_base.metallica";
+      _1 = "benchADM.par";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "benchADM.out";
+  };
+  calculix_06 = {
+    argv = {
+      _0 = "calculix_base.metallica";
+      _1 = "-i";
+      _2 = "hyperviscoplastic";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "hyperviscoplastic.log";
+  };
+  "cg.big" = {
+    argv = {
+      _0 = "cg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  crafty = {
+    argv = {
+      _0 = "crafty";
+      size = 1;
+    };
+    ff_dist = 1e+07;
+    stdin = "crafty.in";
+    stdout = "crafty.out";
+  };
+  dealII_06 = {
+    argv = {
+      _0 = "dealII_base.metallica";
+      _1 = "23";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "log";
+  };
+  em3d_med = {
+    argv = {
+      _0 = "em3d";
+      _1 = "200000";
+      _2 = "3";
+      _3 = "20";
+      size = 4;
+    };
+    ff_dist = 0.;
+  };
+  eon_cook = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.cook";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.cook.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.cook";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "cook_log.out";
+  };
+  eon_kajiya = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.kajiya";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.kajiya.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.kajiya";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "kajiya_log.out";
+  };
+  eon_rushmeier = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.rushmeier";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.rushmeier.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.rushmeier";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "rushmeier_log.out";
+  };
+  "ep.big" = {
+    argv = {
+      _0 = "ep.C";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  epic = {
+    argv = {
+      _0 = "epic";
+      _1 = "test_image.pgm";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  equake = {
+    argv = {
+      _0 = "equake";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "eqinp.in";
+    stdout = "eqinp.out";
+  };
+  facerec = {
+    argv = {
+      _0 = "facerec";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ref-facerec.in";
+    stdout = "ref-facerec.out";
+  };
+  fma3d = {
+    argv = {
+      _0 = "fma3d";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "fma3d.in";
+    stdout = "fma3d.out";
+  };
+  "ft.big" = {
+    argv = {
+      _0 = "ft.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  g721d = {
+    argv = {
+      _0 = "decode";
+      _1 = "-4";
+      _2 = "-l";
+      _3 = "-f";
+      _4 = "clinton.g721";
+      size = 5;
+    };
+    ff_dist = 0.;
+  };
+  galgel = {
+    argv = {
+      _0 = "galgel";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "galgel.in";
+    stdout = "galgel.out";
+  };
+  gamess_06_cytosine = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "cytosine.2.config";
+    stdout = "cytosine.2.out";
+  };
+  gamess_06_triazolium = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "triazolium.config";
+    stdout = "triazolium.out";
+  };
+  gap = {
+    argv = {
+      _0 = "gap";
+      _1 = "-l";
+      _2 = "./";
+      _3 = "-q";
+      _4 = "-m";
+      _5 = "192M";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdin = "ref-gap.in";
+    stdout = "ref-gap.out";
+  };
+  gcc_06_typeck = {
+    argv = {
+      _0 = "gcc_base.metallica";
+      _1 = "c-typeck.i";
+      _2 = "-o";
+      _3 = "c-typeck.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "c-typeck.out";
+  };
+  gcc_166 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "166.i";
+      _2 = "-o";
+      _3 = "166.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "166.out";
+  };
+  gcc_200 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "200.i";
+      _2 = "-o";
+      _3 = "200.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "200.out";
+  };
+  gcc_expr = {
+    argv = {
+      _0 = "cc1";
+      _1 = "expr.i";
+      _2 = "-o";
+      _3 = "expr.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "expr.out";
+  };
+  gcc_integrate = {
+    argv = {
+      _0 = "cc1";
+      _1 = "integrate.i";
+      _2 = "-o";
+      _3 = "integrate.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "integrate.out";
+  };
+  gcc_scilab = {
+    argv = {
+      _0 = "cc1";
+      _1 = "scilab.i";
+      _2 = "-o";
+      _3 = "scilab.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "scilab.out";
+  };
+  gobmk_06_nngs = {
+    argv = {
+      _0 = "gobmk_base.metallica";
+      _1 = "--quiet";
+      _2 = "--mode";
+      _3 = "gtp";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdin = "nngs.tst";
+    stdout = "nngs.out";
+  };
+  gromacs_06 = {
+    argv = {
+      _0 = "gromacs_base.metallica";
+      _1 = "-silent";
+      _2 = "-deffnm";
+      _3 = "gromacs";
+      _4 = "-nice";
+      _5 = "0";
+      size = 6;
+    };
+    ff_dist = 0.;
+  };
+  gzip_graphic = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-graphic.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-graphic.out";
+  };
+  gzip_log = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-log.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-log.out";
+  };
+  gzip_program = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-program.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-program.out";
+  };
+  gzip_source = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-source.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-source.out";
+  };
+  h264ref_06_sss_encoder_main = {
+    argv = {
+      _0 = "h264ref_base.metallica";
+      _1 = "-d";
+      _2 = "sss_encoder_main.cfg";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "sss_main_encodelog.out";
+  };
+  health = {
+    argv = {
+      _0 = "health";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  hmmer_06_nph3 = {
+    argv = {
+      _0 = "hmmer_base.metallica";
+      _1 = "nph3.hmm";
+      _2 = "swiss41";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "nph3.out";
+  };
+  jpege = {
+    argv = {
+      _0 = "cjpeg";
+      _1 = "-dct";
+      _2 = "int";
+      _3 = "-progressive";
+      _4 = "-opt";
+      _5 = "-outfile";
+      _6 = "teste";
+      _7 = "monalisa.ppm";
+      size = 8;
+    };
+    ff_dist = 0.;
+  };
+  lbm_06 = {
+    argv = {
+      _0 = "lbm_base.metallica";
+      _1 = "3000";
+      _2 = "reference.dat";
+      _3 = "0";
+      _4 = "0";
+      _5 = "100_100_130_ldc.of";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdout = "lbm.out";
+  };
+  leslie3d_06 = {
+    argv = {
+      _0 = "leslie3d_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "leslie3d.in";
+    stdout = "leslie3d.stdout";
+  };
+  libquantum_06 = {
+    argv = {
+      _0 = "libquantum_base.metallica";
+      _1 = "1397";
+      _2 = "8";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  lucas = {
+    argv = {
+      _0 = "lucas";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "lucas2.in";
+    stdout = "lucas2.out";
+  };
+  mcf = {
+    argv = {
+      _0 = "mcf";
+      _1 = "inp-mcf.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp-mcf.out";
+  };
+  mcf_06 = {
+    argv = {
+      _0 = "mcf_base.metallica";
+      _1 = "inp.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp.out";
+  };
+  mesa = {
+    argv = {
+      _0 = "mesa";
+      _1 = "-frames";
+      _2 = "1000";
+      _3 = "-meshfile";
+      _4 = "mesa.in";
+      _5 = "-ppmfile";
+      _6 = "mesa.ppm";
+      size = 7;
+    };
+    ff_dist = 0.;
+  };
+  mesa_texgen = {
+    argv = {
+      _0 = "texgen";
+      _1 = "c";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "mg.big" = {
+    argv = {
+      _0 = "mg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  mgrid = {
+    argv = {
+      _0 = "mgrid";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "mgrid.in";
+    stdout = "mgrid.out";
+  };
+  milc_06 = {
+    argv = {
+      _0 = "milc_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "su3imp.in";
+    stdout = "su3imp.out";
+  };
+  mst = {
+    argv = {
+      _0 = "mst";
+      _1 = "2048";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  namd_06 = {
+    argv = {
+      _0 = "namd_base.metallica";
+      _1 = "--input";
+      _2 = "namd.input";
+      _3 = "--iterations";
+      _4 = "38";
+      _5 = "--output";
+      _6 = "namd.out";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "namd.stdout";
+  };
+  omnetpp_06 = {
+    argv = {
+      _0 = "omnetpp_base.metallica";
+      _1 = "omnetpp.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "omnetpp.log";
+  };
+  parser = {
+    argv = {
+      _0 = "parser";
+      _1 = "2.1.dict";
+      _2 = "-batch";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdin = "ref-parser.in";
+    stdout = "ref-parser.out";
+  };
+  perim_big = {
+    argv = {
+      _0 = "perimeter";
+      _1 = "12";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  perlbench_06_checkspam = {
+    argv = {
+      _0 = "perlbench_base.metallica";
+      _1 = "-I./lib";
+      _10 = "1";
+      _11 = "1";
+      _2 = "checkspam.pl";
+      _3 = "2500";
+      _4 = "5";
+      _5 = "25";
+      _6 = "11";
+      _7 = "150";
+      _8 = "1";
+      _9 = "1";
+      size = 12;
+    };
+    ff_dist = 0.;
+    stdout = "checkspam.2500.5.25.11.150.1.1.1.1.out";
+  };
+  perlbmk_diffmail = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "diffmail.pl";
+      _3 = "2";
+      _4 = "550";
+      _5 = "15";
+      _6 = "24";
+      _7 = "23";
+      _8 = "100";
+      size = 9;
+    };
+    ff_dist = 0.;
+    stdout = "2.550.15.24.23.100.out";
+  };
+  perlbmk_makerand = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I.";
+      _2 = "-I./lib";
+      _3 = "makerand.pl";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "makerand.out";
+  };
+  perlbmk_perfect = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "perfect.pl";
+      _3 = "b";
+      _4 = "3";
+      _5 = "m";
+      _6 = "4";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "b.3.m.4.out";
+  };
+  perlbmk_splitmail535 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "535";
+      _4 = "13";
+      _5 = "25";
+      _6 = "24";
+      _7 = "1091";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "535.13.25.24.1091.out";
+  };
+  perlbmk_splitmail704 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "704";
+      _4 = "12";
+      _5 = "26";
+      _6 = "16";
+      _7 = "836";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "704.12.26.16.836.out";
+  };
+  perlbmk_splitmail850 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "850";
+      _4 = "5";
+      _5 = "19";
+      _6 = "18";
+      _7 = "1500";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "850.5.19.18.1500.out";
+  };
+  perlbmk_splitmail957 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "957";
+      _4 = "12";
+      _5 = "23";
+      _6 = "26";
+      _7 = "1014";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "957.12.23.26.1014.out";
+  };
+  povray_06 = {
+    argv = {
+      _0 = "povray_base.metallica";
+      _1 = "SPEC-benchmark-ref.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "SPEC-benchmark-ref.stdout";
+  };
+  sixtrack = {
+    argv = {
+      _0 = "sixtrack";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "inp-sixtrack.in";
+    stdout = "inp-sixtrack.out";
+  };
+  sjeng_06 = {
+    argv = {
+      _0 = "sjeng_base.metallica";
+      _1 = "ref.txt";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  soplex_06_pds_50 = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-s1";
+      _2 = "-e";
+      _3 = "-m45000";
+      _4 = "pds_50.mps";
+      size = 5;
+    };
+    ff_dist = 0.;
+    stdout = "pds-50.mps.out";
+  };
+  soplex_06_ref = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-m3500";
+      _2 = "ref.mps";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  "sp.big" = {
+    argv = {
+      _0 = "sp.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  sphinx3_06 = {
+    argv = {
+      _0 = "sphinx_livepretend_base.metallica";
+      _1 = "ctlfile";
+      _2 = ".";
+      _3 = "args.an4";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "an4.log";
+  };
+  swim = {
+    argv = {
+      _0 = "swim";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "swim.in";
+    stdout = "swim.out";
+  };
+  treeadd = {
+    argv = {
+      _0 = "treeadd";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  twolf = {
+    argv = {
+      _0 = "twolf";
+      _1 = "ref";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref-twolf.out";
+  };
+  vortex_1 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian1.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_2 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian2.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_3 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian3.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vpr_place = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "0.005";
+      _11 = "-alpha_t";
+      _12 = "0.9412";
+      _13 = "-inner_num";
+      _14 = "2";
+      _2 = "arch.in";
+      _3 = "place.out";
+      _4 = "dum.out";
+      _5 = "-nodisp";
+      _6 = "-place_only";
+      _7 = "-init_t";
+      _8 = "5";
+      _9 = "-exit_t";
+      size = 15;
+    };
+    ff_dist = 0.;
+    stdout = "vpr_place.out";
+  };
+  vpr_route = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "2";
+      _11 = "-acc_fac";
+      _12 = "1";
+      _13 = "-first_iter_pres_fac";
+      _14 = "4";
+      _15 = "-initial_pres_fac";
+      _16 = "8";
+      _2 = "arch.in";
+      _3 = "place.in";
+      _4 = "route.out";
+      _5 = "-nodisp";
+      _6 = "-route_only";
+      _7 = "-route_chan_width";
+      _8 = "15";
+      _9 = "-pres_fac_mult";
+      size = 17;
+    };
+    ff_dist = 0.;
+    stdout = "vpr-route.out";
+  };
+  wupwise = {
+    argv = {
+      _0 = "wupwise";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "wupwise.out";
+  };
+  zeusmp_06 = {
+    argv = {
+      _0 = "zeusmp_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "zeusmp.stdout";
+  };
+};
+--------
+Contexts: 1, cores: 1
+  context 0 on core 0
+Printing Pooled Resources:
+  ROB  64 
+   IQ  32 
+   FQ  32 
+ IREG  64 
+ FREG  64 
+  LSQ  24 
+
+--Startup complete; beginning simulation.
+WorkQueue::sim_prestart_jobs: pre-starting jobs: 0
+App A0: (crafty)
+--Logging A0 stats every 10000 cyc to "/home/prasadk27/Desktop/ECE_611/project/output_files_all/crafty8.A0": cyc commits l3cache_hr mem_delay itlb_acc dtlb_acc icache_acc dcache_acc l2cache_acc l3cache_acc bpred_acc intalu_acc fpalu_acc ldst_acc iq_acc fq_acc ireg_acc freg_acc iren_acc fren_acc lsq_acc rob_acc iq_occ fq_occ ireg_occ freg_occ lsq_occ rob_occ
+--Fast-forwarding app A0 for 10000000 insts...
+--FF'd 10000000 insts in 0.3440/0.000/0.3450(99.71%) sec: 2.907e+07 inst/s
+WorkQueue: job 0 "WorkQueue/Jobs/job_1" started at time 0, initial apps [ 0 ]
+Printing Pooled Resources:
+  ROB  48 
+   IQ  24 
+   FQ  24 
+ IREG  48 
+ FREG  48 
+  LSQ  18 
+
+appmgr: A0 swap-in C0 T0 final_fill_commit at 39; swapin delay 39 (targfetch) 39 (fillcommit), migrate delay -1 (tf) 1 (fc)
+Committed Instructions: 3893 Cycles: 10000 IPC: 0.389300 
+Committed Instructions: 4173 Cycles: 10000 IPC: 0.417300 
+Committed Instructions: 4084 Cycles: 10000 IPC: 0.408400 
+Committed Instructions: 5152 Cycles: 10000 IPC: 0.515200 
+Committed Instructions: 13596 Cycles: 10000 IPC: 1.359600 
+Committed Instructions: 13206 Cycles: 10000 IPC: 1.320600 
+Committed Instructions: 6504 Cycles: 10000 IPC: 0.650400 
+Committed Instructions: 11525 Cycles: 10000 IPC: 1.152500 
+Committed Instructions: 7708 Cycles: 10000 IPC: 0.770800 
+Committed Instructions: 6606 Cycles: 10000 IPC: 0.660600 
+Committed Instructions: 7713 Cycles: 10000 IPC: 0.771300 
+Committed Instructions: 8540 Cycles: 10000 IPC: 0.854000 
+Committed Instructions: 6735 Cycles: 10000 IPC: 0.673500 
+Committed Instructions: 7016 Cycles: 10000 IPC: 0.701600 
+Committed Instructions: 7805 Cycles: 10000 IPC: 0.780500 
+Committed Instructions: 11591 Cycles: 10000 IPC: 1.159100 
+Committed Instructions: 6798 Cycles: 10000 IPC: 0.679800 
+Committed Instructions: 12718 Cycles: 10000 IPC: 1.271800 
+Committed Instructions: 6963 Cycles: 10000 IPC: 0.696300 
+Committed Instructions: 13233 Cycles: 10000 IPC: 1.323300 
+Committed Instructions: 12047 Cycles: 10000 IPC: 1.204700 
+Committed Instructions: 2898 Cycles: 10000 IPC: 0.289800 
+Committed Instructions: 2639 Cycles: 10000 IPC: 0.263900 
+Committed Instructions: 1322 Cycles: 10000 IPC: 0.132200 
+Committed Instructions: 2777 Cycles: 10000 IPC: 0.277700 
+Committed Instructions: 11423 Cycles: 10000 IPC: 1.142300 
+Committed Instructions: 11814 Cycles: 10000 IPC: 1.181400 
+Committed Instructions: 12058 Cycles: 10000 IPC: 1.205800 
+Committed Instructions: 11909 Cycles: 10000 IPC: 1.190900 
+Committed Instructions: 11996 Cycles: 10000 IPC: 1.199600 
+Committed Instructions: 12107 Cycles: 10000 IPC: 1.210700 
+Committed Instructions: 11924 Cycles: 10000 IPC: 1.192400 
+Committed Instructions: 12103 Cycles: 10000 IPC: 1.210300 
+Committed Instructions: 12013 Cycles: 10000 IPC: 1.201300 
+Committed Instructions: 11887 Cycles: 10000 IPC: 1.188700 
+Committed Instructions: 12057 Cycles: 10000 IPC: 1.205700 
+Committed Instructions: 11918 Cycles: 10000 IPC: 1.191800 
+Committed Instructions: 11573 Cycles: 10000 IPC: 1.157300 
+Committed Instructions: 11839 Cycles: 10000 IPC: 1.183900 
+Committed Instructions: 11733 Cycles: 10000 IPC: 1.173300 
+Committed Instructions: 12033 Cycles: 10000 IPC: 1.203300 
+Committed Instructions: 12105 Cycles: 10000 IPC: 1.210500 
+Committed Instructions: 11994 Cycles: 10000 IPC: 1.199400 
+Committed Instructions: 12129 Cycles: 10000 IPC: 1.212900 
+Committed Instructions: 12105 Cycles: 10000 IPC: 1.210500 
+Committed Instructions: 12043 Cycles: 10000 IPC: 1.204300 
+Committed Instructions: 12152 Cycles: 10000 IPC: 1.215200 
+Committed Instructions: 11978 Cycles: 10000 IPC: 1.197800 
+Committed Instructions: 11882 Cycles: 10000 IPC: 1.188200 
+Committed Instructions: 12133 Cycles: 10000 IPC: 1.213300 
+Committed Instructions: 11717 Cycles: 10000 IPC: 1.171700 
+Committed Instructions: 11819 Cycles: 10000 IPC: 1.181900 
+Committed Instructions: 11950 Cycles: 10000 IPC: 1.195000 
+Committed Instructions: 11911 Cycles: 10000 IPC: 1.191100 
+Committed Instructions: 12065 Cycles: 10000 IPC: 1.206500 
+Committed Instructions: 12031 Cycles: 10000 IPC: 1.203100 
+Committed Instructions: 12015 Cycles: 10000 IPC: 1.201500 
+Committed Instructions: 12240 Cycles: 10000 IPC: 1.224000 
+Committed Instructions: 11880 Cycles: 10000 IPC: 1.188000 
+Committed Instructions: 11962 Cycles: 10000 IPC: 1.196200 
+Committed Instructions: 11986 Cycles: 10000 IPC: 1.198600 
+Committed Instructions: 11917 Cycles: 10000 IPC: 1.191700 
+Committed Instructions: 11913 Cycles: 10000 IPC: 1.191300 
+Committed Instructions: 11726 Cycles: 10000 IPC: 1.172600 
+Committed Instructions: 11795 Cycles: 10000 IPC: 1.179500 
+Committed Instructions: 11938 Cycles: 10000 IPC: 1.193800 
+Committed Instructions: 12037 Cycles: 10000 IPC: 1.203700 
+Committed Instructions: 11936 Cycles: 10000 IPC: 1.193600 
+Committed Instructions: 12105 Cycles: 10000 IPC: 1.210500 
+Committed Instructions: 11926 Cycles: 10000 IPC: 1.192600 
+Committed Instructions: 12132 Cycles: 10000 IPC: 1.213200 
+Committed Instructions: 12007 Cycles: 10000 IPC: 1.200700 
+Committed Instructions: 11961 Cycles: 10000 IPC: 1.196100 
+Committed Instructions: 12061 Cycles: 10000 IPC: 1.206100 
+Committed Instructions: 11984 Cycles: 10000 IPC: 1.198400 
+Committed Instructions: 11903 Cycles: 10000 IPC: 1.190300 
+Committed Instructions: 11725 Cycles: 10000 IPC: 1.172500 
+Committed Instructions: 11987 Cycles: 10000 IPC: 1.198700 
+Committed Instructions: 11889 Cycles: 10000 IPC: 1.188900 
+Committed Instructions: 12067 Cycles: 10000 IPC: 1.206700 
+Committed Instructions: 12016 Cycles: 10000 IPC: 1.201600 
+Committed Instructions: 12007 Cycles: 10000 IPC: 1.200700 
+Committed Instructions: 12037 Cycles: 10000 IPC: 1.203700 
+Committed Instructions: 12014 Cycles: 10000 IPC: 1.201400 
+Committed Instructions: 11999 Cycles: 10000 IPC: 1.199900 
+Committed Instructions: 12015 Cycles: 10000 IPC: 1.201500 
+Committed Instructions: 11962 Cycles: 10000 IPC: 1.196200 
+Committed Instructions: 11857 Cycles: 10000 IPC: 1.185700 
+Committed Instructions: 11850 Cycles: 10000 IPC: 1.185000 
+Committed Instructions: 11741 Cycles: 10000 IPC: 1.174100 
+Committed Instructions: 11899 Cycles: 10000 IPC: 1.189900 
+Committed Instructions: 12194 Cycles: 10000 IPC: 1.219400 
+Committed Instructions: 11998 Cycles: 10000 IPC: 1.199800 
+Committed Instructions: 12060 Cycles: 10000 IPC: 1.206000 
+Committed Instructions: 12216 Cycles: 10000 IPC: 1.221600 
+Committed Instructions: 12060 Cycles: 10000 IPC: 1.206000 
+Committed Instructions: 12082 Cycles: 10000 IPC: 1.208200 
+Committed Instructions: 12070 Cycles: 10000 IPC: 1.207000 
+Committed Instructions: 12037 Cycles: 10000 IPC: 1.203700 
+Committed Instructions: 12081 Cycles: 10000 IPC: 1.208100 
+Committed Instructions: 5755 Cycles: 10000 IPC: 0.575500 
+Committed Instructions: 7036 Cycles: 10000 IPC: 0.703600 
+Committed Instructions: 4120 Cycles: 10000 IPC: 0.412000 
+Committed Instructions: 661 Cycles: 10000 IPC: 0.066100 
+Committed Instructions: 440 Cycles: 10000 IPC: 0.044000 
+Committed Instructions: 420 Cycles: 10000 IPC: 0.042000 
+Committed Instructions: 1359 Cycles: 10000 IPC: 0.135900 
+Committed Instructions: 2733 Cycles: 10000 IPC: 0.273300 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1986 Cycles: 10000 IPC: 0.198600 
+Committed Instructions: 2026 Cycles: 10000 IPC: 0.202600 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1904 Cycles: 10000 IPC: 0.190400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1978 Cycles: 10000 IPC: 0.197800 
+Committed Instructions: 2034 Cycles: 10000 IPC: 0.203400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1904 Cycles: 10000 IPC: 0.190400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1978 Cycles: 10000 IPC: 0.197800 
+Committed Instructions: 2034 Cycles: 10000 IPC: 0.203400 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1904 Cycles: 10000 IPC: 0.190400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 2033 Cycles: 10000 IPC: 0.203300 
+Committed Instructions: 1979 Cycles: 10000 IPC: 0.197900 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1904 Cycles: 10000 IPC: 0.190400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1998 Cycles: 10000 IPC: 0.199800 
+Committed Instructions: 2014 Cycles: 10000 IPC: 0.201400 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 2018 Cycles: 10000 IPC: 0.201800 
+Committed Instructions: 1926 Cycles: 10000 IPC: 0.192600 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 1972 Cycles: 10000 IPC: 0.197200 
+Committed Instructions: 2040 Cycles: 10000 IPC: 0.204000 
+Committed Instructions: 2049 Cycles: 10000 IPC: 0.204900 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2145 Cycles: 10000 IPC: 0.214500 
+Committed Instructions: 2031 Cycles: 10000 IPC: 0.203100 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2114 Cycles: 10000 IPC: 0.211400 
+Committed Instructions: 2134 Cycles: 10000 IPC: 0.213400 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2073 Cycles: 10000 IPC: 0.207300 
+Committed Instructions: 2103 Cycles: 10000 IPC: 0.210300 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2150 Cycles: 10000 IPC: 0.215000 
+Committed Instructions: 2026 Cycles: 10000 IPC: 0.202600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2106 Cycles: 10000 IPC: 0.210600 
+Committed Instructions: 2142 Cycles: 10000 IPC: 0.214200 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2091 Cycles: 10000 IPC: 0.209100 
+Committed Instructions: 2157 Cycles: 10000 IPC: 0.215700 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2145 Cycles: 10000 IPC: 0.214500 
+Committed Instructions: 2103 Cycles: 10000 IPC: 0.210300 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2098 Cycles: 10000 IPC: 0.209800 
+Committed Instructions: 2150 Cycles: 10000 IPC: 0.215000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2091 Cycles: 10000 IPC: 0.209100 
+Committed Instructions: 2157 Cycles: 10000 IPC: 0.215700 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2145 Cycles: 10000 IPC: 0.214500 
+Committed Instructions: 2103 Cycles: 10000 IPC: 0.210300 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2016 Cycles: 10000 IPC: 0.201600 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2027 Cycles: 10000 IPC: 0.202700 
+Committed Instructions: 2149 Cycles: 10000 IPC: 0.214900 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2088 Cycles: 10000 IPC: 0.208800 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 2160 Cycles: 10000 IPC: 0.216000 
+Committed Instructions: 3952 Cycles: 10000 IPC: 0.395200 
+Committed Instructions: 7177 Cycles: 10000 IPC: 0.717700 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 6965 Cycles: 10000 IPC: 0.696500 
+Committed Instructions: 7088 Cycles: 10000 IPC: 0.708800 
+Committed Instructions: 6969 Cycles: 10000 IPC: 0.696900 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 7086 Cycles: 10000 IPC: 0.708600 
+Committed Instructions: 7177 Cycles: 10000 IPC: 0.717700 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 7134 Cycles: 10000 IPC: 0.713400 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 6931 Cycles: 10000 IPC: 0.693100 
+Committed Instructions: 7145 Cycles: 10000 IPC: 0.714500 
+Committed Instructions: 7143 Cycles: 10000 IPC: 0.714300 
+Committed Instructions: 7112 Cycles: 10000 IPC: 0.711200 
+Committed Instructions: 7038 Cycles: 10000 IPC: 0.703800 
+Committed Instructions: 7058 Cycles: 10000 IPC: 0.705800 
+Committed Instructions: 7173 Cycles: 10000 IPC: 0.717300 
+Committed Instructions: 7108 Cycles: 10000 IPC: 0.710800 
+Committed Instructions: 7155 Cycles: 10000 IPC: 0.715500 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 7134 Cycles: 10000 IPC: 0.713400 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 7031 Cycles: 10000 IPC: 0.703100 
+Committed Instructions: 7158 Cycles: 10000 IPC: 0.715800 
+Committed Instructions: 7116 Cycles: 10000 IPC: 0.711600 
+Committed Instructions: 6873 Cycles: 10000 IPC: 0.687300 
+Committed Instructions: 7149 Cycles: 10000 IPC: 0.714900 
+Committed Instructions: 7099 Cycles: 10000 IPC: 0.709900 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 7086 Cycles: 10000 IPC: 0.708600 
+Committed Instructions: 7177 Cycles: 10000 IPC: 0.717700 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 7079 Cycles: 10000 IPC: 0.707900 
+Committed Instructions: 7139 Cycles: 10000 IPC: 0.713900 
+Committed Instructions: 7131 Cycles: 10000 IPC: 0.713100 
+Committed Instructions: 7026 Cycles: 10000 IPC: 0.702600 
+Committed Instructions: 7147 Cycles: 10000 IPC: 0.714700 
+Committed Instructions: 7117 Cycles: 10000 IPC: 0.711700 
+Committed Instructions: 7130 Cycles: 10000 IPC: 0.713000 
+Committed Instructions: 6965 Cycles: 10000 IPC: 0.696500 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 7086 Cycles: 10000 IPC: 0.708600 
+Committed Instructions: 7177 Cycles: 10000 IPC: 0.717700 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 7134 Cycles: 10000 IPC: 0.713400 
+Committed Instructions: 7174 Cycles: 10000 IPC: 0.717400 
+Committed Instructions: 6907 Cycles: 10000 IPC: 0.690700 
+Committed Instructions: 7117 Cycles: 10000 IPC: 0.711700 
+Committed Instructions: 7044 Cycles: 10000 IPC: 0.704400 
+Committed Instructions: 7109 Cycles: 10000 IPC: 0.710900 
+Committed Instructions: 7154 Cycles: 10000 IPC: 0.715400 
+Committed Instructions: 7113 Cycles: 10000 IPC: 0.711300 
+Committed Instructions: 7156 Cycles: 10000 IPC: 0.715600 
+Committed Instructions: 7086 Cycles: 10000 IPC: 0.708600 
+Committed Instructions: 7177 Cycles: 10000 IPC: 0.717700 
+Committed Instructions: 7141 Cycles: 10000 IPC: 0.714100 
+Committed Instructions: 7047 Cycles: 10000 IPC: 0.704700 
+Committed Instructions: 7152 Cycles: 10000 IPC: 0.715200 
+Committed Instructions: 6902 Cycles: 10000 IPC: 0.690200 
+Committed Instructions: 7168 Cycles: 10000 IPC: 0.716800 
+Committed Instructions: 7013 Cycles: 10000 IPC: 0.701300 
+Committed Instructions: 7527 Cycles: 10000 IPC: 0.752700 
+Committed Instructions: 7146 Cycles: 10000 IPC: 0.714600 
+Committed Instructions: 7138 Cycles: 10000 IPC: 0.713800 
+Committed Instructions: 7012 Cycles: 10000 IPC: 0.701200 
+Committed Instructions: 7142 Cycles: 10000 IPC: 0.714200 
+Committed Instructions: 7118 Cycles: 10000 IPC: 0.711800 
+Committed Instructions: 7161 Cycles: 10000 IPC: 0.716100 
+Committed Instructions: 6989 Cycles: 10000 IPC: 0.698900 
+Committed Instructions: 7119 Cycles: 10000 IPC: 0.711900 
+Committed Instructions: 389 Cycles: 10000 IPC: 0.038900 
+Committed Instructions: 384 Cycles: 10000 IPC: 0.038400 
+Committed Instructions: 864 Cycles: 10000 IPC: 0.086400 
+Committed Instructions: 702 Cycles: 10000 IPC: 0.070200 
+Committed Instructions: 1370 Cycles: 10000 IPC: 0.137000 
+Committed Instructions: 2469 Cycles: 10000 IPC: 0.246900 
+Committed Instructions: 3886 Cycles: 10000 IPC: 0.388600 
+Committed Instructions: 2393 Cycles: 10000 IPC: 0.239300 
+Committed Instructions: 2185 Cycles: 10000 IPC: 0.218500 
+Committed Instructions: 8891 Cycles: 10000 IPC: 0.889100 
+Committed Instructions: 10502 Cycles: 10000 IPC: 1.050200 
+Committed Instructions: 2559 Cycles: 10000 IPC: 0.255900 
+Committed Instructions: 880 Cycles: 10000 IPC: 0.088000 
+Committed Instructions: 2524 Cycles: 10000 IPC: 0.252400 
+Committed Instructions: 10678 Cycles: 10000 IPC: 1.067800 
+Committed Instructions: 7635 Cycles: 10000 IPC: 0.763500 
+Committed Instructions: 9922 Cycles: 10000 IPC: 0.992200 
+Committed Instructions: 6161 Cycles: 10000 IPC: 0.616100 
+Committed Instructions: 9061 Cycles: 10000 IPC: 0.906100 
+Committed Instructions: 2810 Cycles: 10000 IPC: 0.281000 
+Committed Instructions: 1104 Cycles: 10000 IPC: 0.110400 
+Committed Instructions: 1126 Cycles: 10000 IPC: 0.112600 
+Committed Instructions: 1130 Cycles: 10000 IPC: 0.113000 
+Committed Instructions: 1104 Cycles: 10000 IPC: 0.110400 
+Committed Instructions: 1107 Cycles: 10000 IPC: 0.110700 
+Committed Instructions: 1149 Cycles: 10000 IPC: 0.114900 
+Committed Instructions: 1104 Cycles: 10000 IPC: 0.110400 
+Committed Instructions: 1152 Cycles: 10000 IPC: 0.115200 
+Committed Instructions: 1104 Cycles: 10000 IPC: 0.110400 
+Committed Instructions: 1107 Cycles: 10000 IPC: 0.110700 
+Committed Instructions: 3591 Cycles: 10000 IPC: 0.359100 
+Committed Instructions: 6836 Cycles: 10000 IPC: 0.683600 
+Committed Instructions: 10373 Cycles: 10000 IPC: 1.037300 
+Committed Instructions: 8306 Cycles: 10000 IPC: 0.830600 
+Committed Instructions: 10929 Cycles: 10000 IPC: 1.092900 
+Committed Instructions: 2992 Cycles: 10000 IPC: 0.299200 
+Committed Instructions: 512 Cycles: 10000 IPC: 0.051200 
+Committed Instructions: 456 Cycles: 10000 IPC: 0.045600 
+Committed Instructions: 862 Cycles: 10000 IPC: 0.086200 
+Committed Instructions: 1863 Cycles: 10000 IPC: 0.186300 
+Committed Instructions: 2223 Cycles: 10000 IPC: 0.222300 
+Committed Instructions: 915 Cycles: 10000 IPC: 0.091500 
+Committed Instructions: 7707 Cycles: 10000 IPC: 0.770700 
+Committed Instructions: 10089 Cycles: 10000 IPC: 1.008900 
+Committed Instructions: 10176 Cycles: 10000 IPC: 1.017600 
+Committed Instructions: 10260 Cycles: 10000 IPC: 1.026000 
+Committed Instructions: 10271 Cycles: 10000 IPC: 1.027100 
+Committed Instructions: 10325 Cycles: 10000 IPC: 1.032500 
+Committed Instructions: 10260 Cycles: 10000 IPC: 1.026000 
+Committed Instructions: 10275 Cycles: 10000 IPC: 1.027500 
+Committed Instructions: 10245 Cycles: 10000 IPC: 1.024500 
+Committed Instructions: 10263 Cycles: 10000 IPC: 1.026300 
+Committed Instructions: 10325 Cycles: 10000 IPC: 1.032500 
+Committed Instructions: 10268 Cycles: 10000 IPC: 1.026800 
+Committed Instructions: 10260 Cycles: 10000 IPC: 1.026000 
+Committed Instructions: 10319 Cycles: 10000 IPC: 1.031900 
+Committed Instructions: 10277 Cycles: 10000 IPC: 1.027700 
+Committed Instructions: 10502 Cycles: 10000 IPC: 1.050200 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10801 Cycles: 10000 IPC: 1.080100 
+Committed Instructions: 10807 Cycles: 10000 IPC: 1.080700 
+Committed Instructions: 10712 Cycles: 10000 IPC: 1.071200 
+Committed Instructions: 10560 Cycles: 10000 IPC: 1.056000 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10801 Cycles: 10000 IPC: 1.080100 
+Committed Instructions: 10742 Cycles: 10000 IPC: 1.074200 
+Committed Instructions: 10796 Cycles: 10000 IPC: 1.079600 
+Committed Instructions: 10836 Cycles: 10000 IPC: 1.083600 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10825 Cycles: 10000 IPC: 1.082500 
+Committed Instructions: 10791 Cycles: 10000 IPC: 1.079100 
+Committed Instructions: 10809 Cycles: 10000 IPC: 1.080900 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10720 Cycles: 10000 IPC: 1.072000 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10800 Cycles: 10000 IPC: 1.080000 
+Committed Instructions: 10801 Cycles: 10000 IPC: 1.080100 
+Committed Instructions: 10802 Cycles: 10000 IPC: 1.080200 
+Committed Instructions: 10808 Cycles: 10000 IPC: 1.080800 
+Committed Instructions: 10709 Cycles: 10000 IPC: 1.070900 
+Committed Instructions: 10480 Cycles: 10000 IPC: 1.048000 
+Committed Instructions: 10808 Cycles: 10000 IPC: 1.080800 
+Committed Instructions: 10799 Cycles: 10000 IPC: 1.079900 
+Committed Instructions: 10832 Cycles: 10000 IPC: 1.083200 
+Committed Instructions: 10796 Cycles: 10000 IPC: 1.079600 
+Committed Instructions: 10828 Cycles: 10000 IPC: 1.082800 
+Committed Instructions: 9849 Cycles: 10000 IPC: 0.984900 
+Committed Instructions: 413 Cycles: 10000 IPC: 0.041300 
+Committed Instructions: 1049 Cycles: 10000 IPC: 0.104900 
+Committed Instructions: 319 Cycles: 10000 IPC: 0.031900 
+Committed Instructions: 1488 Cycles: 10000 IPC: 0.148800 
+Committed Instructions: 1379 Cycles: 10000 IPC: 0.137900 
+Committed Instructions: 644 Cycles: 10000 IPC: 0.064400 
+Committed Instructions: 267 Cycles: 10000 IPC: 0.026700 
+Committed Instructions: 443 Cycles: 10000 IPC: 0.044300 
+Committed Instructions: 291 Cycles: 10000 IPC: 0.029100 
+Committed Instructions: 383 Cycles: 10000 IPC: 0.038300 
+Committed Instructions: 396 Cycles: 10000 IPC: 0.039600 
+Committed Instructions: 2412 Cycles: 10000 IPC: 0.241200 
+Committed Instructions: 2059 Cycles: 10000 IPC: 0.205900 
+Committed Instructions: 6220 Cycles: 10000 IPC: 0.622000 
+Committed Instructions: 6957 Cycles: 10000 IPC: 0.695700 
+Committed Instructions: 8791 Cycles: 10000 IPC: 0.879100 
+Committed Instructions: 8238 Cycles: 10000 IPC: 0.823800 
+Committed Instructions: 8655 Cycles: 10000 IPC: 0.865500 
+Committed Instructions: 6216 Cycles: 10000 IPC: 0.621600 
+Committed Instructions: 10411 Cycles: 10000 IPC: 1.041100 
+Committed Instructions: 8729 Cycles: 10000 IPC: 0.872900 
+Committed Instructions: 11478 Cycles: 10000 IPC: 1.147800 
+Committed Instructions: 10149 Cycles: 10000 IPC: 1.014900 
+Committed Instructions: 11628 Cycles: 10000 IPC: 1.162800 
+Committed Instructions: 9511 Cycles: 10000 IPC: 0.951100 
+Committed Instructions: 6860 Cycles: 10000 IPC: 0.686000 
+Committed Instructions: 7852 Cycles: 10000 IPC: 0.785200 
+Committed Instructions: 7485 Cycles: 10000 IPC: 0.748500 
+Committed Instructions: 8444 Cycles: 10000 IPC: 0.844400 
+Committed Instructions: 8569 Cycles: 10000 IPC: 0.856900 
+Committed Instructions: 9523 Cycles: 10000 IPC: 0.952300 
+Committed Instructions: 8909 Cycles: 10000 IPC: 0.890900 
+Committed Instructions: 8975 Cycles: 10000 IPC: 0.897500 
+Committed Instructions: 14187 Cycles: 10000 IPC: 1.418700 
+Committed Instructions: 10237 Cycles: 10000 IPC: 1.023700 
+Committed Instructions: 440 Cycles: 10000 IPC: 0.044000 
+Committed Instructions: 1891 Cycles: 10000 IPC: 0.189100 
+Committed Instructions: 902 Cycles: 10000 IPC: 0.090200 
+Committed Instructions: 1859 Cycles: 10000 IPC: 0.185900 
+Committed Instructions: 533 Cycles: 10000 IPC: 0.053300 
+Committed Instructions: 993 Cycles: 10000 IPC: 0.099300 
+Committed Instructions: 1151 Cycles: 10000 IPC: 0.115100 
+Committed Instructions: 4270 Cycles: 10000 IPC: 0.427000 
+Committed Instructions: 1300 Cycles: 10000 IPC: 0.130000 
+Committed Instructions: 2766 Cycles: 10000 IPC: 0.276600 
+Committed Instructions: 7720 Cycles: 10000 IPC: 0.772000 
+Committed Instructions: 12672 Cycles: 10000 IPC: 1.267200 
+Committed Instructions: 10567 Cycles: 10000 IPC: 1.056700 
+Committed Instructions: 611 Cycles: 10000 IPC: 0.061100 
+Committed Instructions: 589 Cycles: 10000 IPC: 0.058900 
+Committed Instructions: 606 Cycles: 10000 IPC: 0.060600 
+Committed Instructions: 2633 Cycles: 10000 IPC: 0.263300 
+Committed Instructions: 2854 Cycles: 10000 IPC: 0.285400 
+Committed Instructions: 11814 Cycles: 10000 IPC: 1.181400 
+Committed Instructions: 9043 Cycles: 10000 IPC: 0.904300 
+Committed Instructions: 12413 Cycles: 10000 IPC: 1.241300 
+Committed Instructions: 1395 Cycles: 10000 IPC: 0.139500 
+Committed Instructions: 5496 Cycles: 10000 IPC: 0.549600 
+Committed Instructions: 3616 Cycles: 10000 IPC: 0.361600 
+Committed Instructions: 7300 Cycles: 10000 IPC: 0.730000 
+Committed Instructions: 8119 Cycles: 10000 IPC: 0.811900 
+Committed Instructions: 2275 Cycles: 10000 IPC: 0.227500 
+Committed Instructions: 2224 Cycles: 10000 IPC: 0.222400 
+Committed Instructions: 3621 Cycles: 10000 IPC: 0.362100 
+Committed Instructions: 7258 Cycles: 10000 IPC: 0.725800 
+Committed Instructions: 8859 Cycles: 10000 IPC: 0.885900 
+Committed Instructions: 9672 Cycles: 10000 IPC: 0.967200 
+Committed Instructions: 11600 Cycles: 10000 IPC: 1.160000 
+Committed Instructions: 3070 Cycles: 10000 IPC: 0.307000 
+Committed Instructions: 4281 Cycles: 10000 IPC: 0.428100 
+Committed Instructions: 10238 Cycles: 10000 IPC: 1.023800 
+Committed Instructions: 9420 Cycles: 10000 IPC: 0.942000 
+Committed Instructions: 10337 Cycles: 10000 IPC: 1.033700 
+Committed Instructions: 8295 Cycles: 10000 IPC: 0.829500 
+Committed Instructions: 9261 Cycles: 10000 IPC: 0.926100 
+Committed Instructions: 7974 Cycles: 10000 IPC: 0.797400 
+Committed Instructions: 6711 Cycles: 10000 IPC: 0.671100 
+Committed Instructions: 8464 Cycles: 10000 IPC: 0.846400 
+Committed Instructions: 6584 Cycles: 10000 IPC: 0.658400 
+Committed Instructions: 4364 Cycles: 10000 IPC: 0.436400 
+Committed Instructions: 9210 Cycles: 10000 IPC: 0.921000 
+Committed Instructions: 10351 Cycles: 10000 IPC: 1.035100 
+Committed Instructions: 10320 Cycles: 10000 IPC: 1.032000 
+Committed Instructions: 10368 Cycles: 10000 IPC: 1.036800 
+Committed Instructions: 9934 Cycles: 10000 IPC: 0.993400 
+Committed Instructions: 9397 Cycles: 10000 IPC: 0.939700 
+Committed Instructions: 11520 Cycles: 10000 IPC: 1.152000 
+Committed Instructions: 8573 Cycles: 10000 IPC: 0.857300 
+Committed Instructions: 8201 Cycles: 10000 IPC: 0.820100 
+Committed Instructions: 7680 Cycles: 10000 IPC: 0.768000 
+Committed Instructions: 7919 Cycles: 10000 IPC: 0.791900 
+Committed Instructions: 9595 Cycles: 10000 IPC: 0.959500 
+Committed Instructions: 9753 Cycles: 10000 IPC: 0.975300 
+Committed Instructions: 9136 Cycles: 10000 IPC: 0.913600 
+Committed Instructions: 8575 Cycles: 10000 IPC: 0.857500 
+Committed Instructions: 9070 Cycles: 10000 IPC: 0.907000 
+Committed Instructions: 8509 Cycles: 10000 IPC: 0.850900 
+Committed Instructions: 10644 Cycles: 10000 IPC: 1.064400 
+Committed Instructions: 10114 Cycles: 10000 IPC: 1.011400 
+Committed Instructions: 6885 Cycles: 10000 IPC: 0.688500 
+Committed Instructions: 9528 Cycles: 10000 IPC: 0.952800 
+Committed Instructions: 8867 Cycles: 10000 IPC: 0.886700 
+Committed Instructions: 11087 Cycles: 10000 IPC: 1.108700 
+Committed Instructions: 9549 Cycles: 10000 IPC: 0.954900 
+Committed Instructions: 9116 Cycles: 10000 IPC: 0.911600 
+Committed Instructions: 9248 Cycles: 10000 IPC: 0.924800 
+Committed Instructions: 9345 Cycles: 10000 IPC: 0.934500 
+Committed Instructions: 10406 Cycles: 10000 IPC: 1.040600 
+Committed Instructions: 10363 Cycles: 10000 IPC: 1.036300 
+Committed Instructions: 11703 Cycles: 10000 IPC: 1.170300 
+Committed Instructions: 8459 Cycles: 10000 IPC: 0.845900 
+Committed Instructions: 8148 Cycles: 10000 IPC: 0.814800 
+Committed Instructions: 6727 Cycles: 10000 IPC: 0.672700 
+Committed Instructions: 9931 Cycles: 10000 IPC: 0.993100 
+Committed Instructions: 8628 Cycles: 10000 IPC: 0.862800 
+Committed Instructions: 9695 Cycles: 10000 IPC: 0.969500 
+Committed Instructions: 10593 Cycles: 10000 IPC: 1.059300 
+Committed Instructions: 8735 Cycles: 10000 IPC: 0.873500 
+Committed Instructions: 9944 Cycles: 10000 IPC: 0.994400 
+Committed Instructions: 9225 Cycles: 10000 IPC: 0.922500 
+Committed Instructions: 9845 Cycles: 10000 IPC: 0.984500 
+Committed Instructions: 9670 Cycles: 10000 IPC: 0.967000 
+Committed Instructions: 9435 Cycles: 10000 IPC: 0.943500 
+Committed Instructions: 9196 Cycles: 10000 IPC: 0.919600 
+Committed Instructions: 9855 Cycles: 10000 IPC: 0.985500 
+Committed Instructions: 9448 Cycles: 10000 IPC: 0.944800 
+Committed Instructions: 9792 Cycles: 10000 IPC: 0.979200 
+Committed Instructions: 9491 Cycles: 10000 IPC: 0.949100 
+Committed Instructions: 7106 Cycles: 10000 IPC: 0.710600 
+Committed Instructions: 8486 Cycles: 10000 IPC: 0.848600 
+Committed Instructions: 9823 Cycles: 10000 IPC: 0.982300 
+Committed Instructions: 9268 Cycles: 10000 IPC: 0.926800 
+Committed Instructions: 9373 Cycles: 10000 IPC: 0.937300 
+Committed Instructions: 9105 Cycles: 10000 IPC: 0.910500 
+Committed Instructions: 10245 Cycles: 10000 IPC: 1.024500 
+Committed Instructions: 7643 Cycles: 10000 IPC: 0.764300 
+Committed Instructions: 6789 Cycles: 10000 IPC: 0.678900 
+Committed Instructions: 6976 Cycles: 10000 IPC: 0.697600 
+Committed Instructions: 10325 Cycles: 10000 IPC: 1.032500 
+Committed Instructions: 7116 Cycles: 10000 IPC: 0.711600 
+Committed Instructions: 6626 Cycles: 10000 IPC: 0.662600 
+Committed Instructions: 6863 Cycles: 10000 IPC: 0.686300 
+Committed Instructions: 9525 Cycles: 10000 IPC: 0.952500 
+Committed Instructions: 9983 Cycles: 10000 IPC: 0.998300 
+Committed Instructions: 10219 Cycles: 10000 IPC: 1.021900 
+Committed Instructions: 10265 Cycles: 10000 IPC: 1.026500 
+Committed Instructions: 10394 Cycles: 10000 IPC: 1.039400 
+Committed Instructions: 9161 Cycles: 10000 IPC: 0.916100 
+Committed Instructions: 7314 Cycles: 10000 IPC: 0.731400 
+Committed Instructions: 10373 Cycles: 10000 IPC: 1.037300 
+Committed Instructions: 10050 Cycles: 10000 IPC: 1.005000 
+Committed Instructions: 8120 Cycles: 10000 IPC: 0.812000 
+Committed Instructions: 8805 Cycles: 10000 IPC: 0.880500 
+Committed Instructions: 9603 Cycles: 10000 IPC: 0.960300 
+Committed Instructions: 8904 Cycles: 10000 IPC: 0.890400 
+Committed Instructions: 9649 Cycles: 10000 IPC: 0.964900 
+Committed Instructions: 9621 Cycles: 10000 IPC: 0.962100 
+Committed Instructions: 9959 Cycles: 10000 IPC: 0.995900 
+Committed Instructions: 9806 Cycles: 10000 IPC: 0.980600 
+Committed Instructions: 10255 Cycles: 10000 IPC: 1.025500 
+Committed Instructions: 9372 Cycles: 10000 IPC: 0.937200 
+Committed Instructions: 9940 Cycles: 10000 IPC: 0.994000 
+Committed Instructions: 8887 Cycles: 10000 IPC: 0.888700 
+Committed Instructions: 9206 Cycles: 10000 IPC: 0.920600 
+Committed Instructions: 9090 Cycles: 10000 IPC: 0.909000 
+Committed Instructions: 8766 Cycles: 10000 IPC: 0.876600 
+Committed Instructions: 10216 Cycles: 10000 IPC: 1.021600 
+Committed Instructions: 10682 Cycles: 10000 IPC: 1.068200 
+Committed Instructions: 10218 Cycles: 10000 IPC: 1.021800 
+Committed Instructions: 11176 Cycles: 10000 IPC: 1.117600 
+Committed Instructions: 11702 Cycles: 10000 IPC: 1.170200 
+Committed Instructions: 10401 Cycles: 10000 IPC: 1.040100 
+Committed Instructions: 11197 Cycles: 10000 IPC: 1.119700 
+Committed Instructions: 9475 Cycles: 10000 IPC: 0.947500 
+Committed Instructions: 9700 Cycles: 10000 IPC: 0.970000 
+Committed Instructions: 9670 Cycles: 10000 IPC: 0.967000 
+Committed Instructions: 10245 Cycles: 10000 IPC: 1.024500 
+Committed Instructions: 10841 Cycles: 10000 IPC: 1.084100 
+Committed Instructions: 9136 Cycles: 10000 IPC: 0.913600 
+Committed Instructions: 7025 Cycles: 10000 IPC: 0.702500 
+Committed Instructions: 5360 Cycles: 10000 IPC: 0.536000 
+Committed Instructions: 12760 Cycles: 10000 IPC: 1.276000 
+Committed Instructions: 9740 Cycles: 10000 IPC: 0.974000 
+Committed Instructions: 9264 Cycles: 10000 IPC: 0.926400 
+Committed Instructions: 11682 Cycles: 10000 IPC: 1.168200 
+Committed Instructions: 11595 Cycles: 10000 IPC: 1.159500 
+Committed Instructions: 9101 Cycles: 10000 IPC: 0.910100 
+Committed Instructions: 10157 Cycles: 10000 IPC: 1.015700 
+Committed Instructions: 9847 Cycles: 10000 IPC: 0.984700 
+Committed Instructions: 8924 Cycles: 10000 IPC: 0.892400 
+Committed Instructions: 9276 Cycles: 10000 IPC: 0.927600 
+Committed Instructions: 7722 Cycles: 10000 IPC: 0.772200 
+Committed Instructions: 10482 Cycles: 10000 IPC: 1.048200 
+Committed Instructions: 11225 Cycles: 10000 IPC: 1.122500 
+Committed Instructions: 9049 Cycles: 10000 IPC: 0.904900 
+Committed Instructions: 10128 Cycles: 10000 IPC: 1.012800 
+Committed Instructions: 9733 Cycles: 10000 IPC: 0.973300 
+Committed Instructions: 9528 Cycles: 10000 IPC: 0.952800 
+Committed Instructions: 12380 Cycles: 10000 IPC: 1.238000 
+Committed Instructions: 10939 Cycles: 10000 IPC: 1.093900 
+Committed Instructions: 10164 Cycles: 10000 IPC: 1.016400 
+Committed Instructions: 9297 Cycles: 10000 IPC: 0.929700 
+Committed Instructions: 10541 Cycles: 10000 IPC: 1.054100 
+Committed Instructions: 9535 Cycles: 10000 IPC: 0.953500 
+Committed Instructions: 9484 Cycles: 10000 IPC: 0.948400 
+Committed Instructions: 7941 Cycles: 10000 IPC: 0.794100 
+Committed Instructions: 9554 Cycles: 10000 IPC: 0.955400 
+Committed Instructions: 9964 Cycles: 10000 IPC: 0.996400 
+Committed Instructions: 9331 Cycles: 10000 IPC: 0.933100 
+Committed Instructions: 4210 Cycles: 10000 IPC: 0.421000 
+Committed Instructions: 8084 Cycles: 10000 IPC: 0.808400 
+Committed Instructions: 7039 Cycles: 10000 IPC: 0.703900 
+Committed Instructions: 9841 Cycles: 10000 IPC: 0.984100 
+Committed Instructions: 10250 Cycles: 10000 IPC: 1.025000 
+Committed Instructions: 10958 Cycles: 10000 IPC: 1.095800 
+Committed Instructions: 11835 Cycles: 10000 IPC: 1.183500 
+Committed Instructions: 13039 Cycles: 10000 IPC: 1.303900 
+Committed Instructions: 11724 Cycles: 10000 IPC: 1.172400 
+Committed Instructions: 8732 Cycles: 10000 IPC: 0.873200 
+Committed Instructions: 10174 Cycles: 10000 IPC: 1.017400 
+Committed Instructions: 10576 Cycles: 10000 IPC: 1.057600 
+Committed Instructions: 9351 Cycles: 10000 IPC: 0.935100 
+Committed Instructions: 7877 Cycles: 10000 IPC: 0.787700 
+Committed Instructions: 10016 Cycles: 10000 IPC: 1.001600 
+Committed Instructions: 9595 Cycles: 10000 IPC: 0.959500 
+Committed Instructions: 11815 Cycles: 10000 IPC: 1.181500 
+Committed Instructions: 9014 Cycles: 10000 IPC: 0.901400 
+Committed Instructions: 13251 Cycles: 10000 IPC: 1.325100 
+Committed Instructions: 13033 Cycles: 10000 IPC: 1.303300 
+Committed Instructions: 12651 Cycles: 10000 IPC: 1.265100 
+Committed Instructions: 9158 Cycles: 10000 IPC: 0.915800 
+Committed Instructions: 9948 Cycles: 10000 IPC: 0.994800 
+Committed Instructions: 10667 Cycles: 10000 IPC: 1.066700 
+Committed Instructions: 10717 Cycles: 10000 IPC: 1.071700 
+Committed Instructions: 11749 Cycles: 10000 IPC: 1.174900 
+Committed Instructions: 11438 Cycles: 10000 IPC: 1.143800 
+Committed Instructions: 12769 Cycles: 10000 IPC: 1.276900 
+Committed Instructions: 12518 Cycles: 10000 IPC: 1.251800 
+Committed Instructions: 12808 Cycles: 10000 IPC: 1.280800 
+Committed Instructions: 9114 Cycles: 10000 IPC: 0.911400 
+Committed Instructions: 10243 Cycles: 10000 IPC: 1.024300 
+Committed Instructions: 9548 Cycles: 10000 IPC: 0.954800 
+Committed Instructions: 9883 Cycles: 10000 IPC: 0.988300 
+Committed Instructions: 9676 Cycles: 10000 IPC: 0.967600 
+Committed Instructions: 10621 Cycles: 10000 IPC: 1.062100 
+Committed Instructions: 10515 Cycles: 10000 IPC: 1.051500 
+Committed Instructions: 10657 Cycles: 10000 IPC: 1.065700 
+Committed Instructions: 10104 Cycles: 10000 IPC: 1.010400 
+Committed Instructions: 10133 Cycles: 10000 IPC: 1.013300 
+Committed Instructions: 10394 Cycles: 10000 IPC: 1.039400 
+Committed Instructions: 11143 Cycles: 10000 IPC: 1.114300 
+Committed Instructions: 9792 Cycles: 10000 IPC: 0.979200 
+Committed Instructions: 9174 Cycles: 10000 IPC: 0.917400 
+Committed Instructions: 11757 Cycles: 10000 IPC: 1.175700 
+Committed Instructions: 11036 Cycles: 10000 IPC: 1.103600 
+Committed Instructions: 9582 Cycles: 10000 IPC: 0.958200 
+Committed Instructions: 12162 Cycles: 10000 IPC: 1.216200 
+Committed Instructions: 12130 Cycles: 10000 IPC: 1.213000 
+Committed Instructions: 10625 Cycles: 10000 IPC: 1.062500 
+Committed Instructions: 11363 Cycles: 10000 IPC: 1.136300 
+Committed Instructions: 10289 Cycles: 10000 IPC: 1.028900 
+Committed Instructions: 10633 Cycles: 10000 IPC: 1.063300 
+Committed Instructions: 11170 Cycles: 10000 IPC: 1.117000 
+Committed Instructions: 11558 Cycles: 10000 IPC: 1.155800 
+Committed Instructions: 10704 Cycles: 10000 IPC: 1.070400 
+Committed Instructions: 11103 Cycles: 10000 IPC: 1.110300 
+Committed Instructions: 10029 Cycles: 10000 IPC: 1.002900 
+Committed Instructions: 10666 Cycles: 10000 IPC: 1.066600 
+Committed Instructions: 10305 Cycles: 10000 IPC: 1.030500 
+Committed Instructions: 10001 Cycles: 10000 IPC: 1.000100 
+Committed Instructions: 7143 Cycles: 10000 IPC: 0.714300 
+Committed Instructions: 7167 Cycles: 10000 IPC: 0.716700 
+Committed Instructions: 9611 Cycles: 10000 IPC: 0.961100 
+Committed Instructions: 6217 Cycles: 10000 IPC: 0.621700 
+Committed Instructions: 7237 Cycles: 10000 IPC: 0.723700 
+Committed Instructions: 6356 Cycles: 10000 IPC: 0.635600 
+Committed Instructions: 9911 Cycles: 10000 IPC: 0.991100 
+Committed Instructions: 9680 Cycles: 10000 IPC: 0.968000 
+Committed Instructions: 8925 Cycles: 10000 IPC: 0.892500 
+Committed Instructions: 12114 Cycles: 10000 IPC: 1.211400 
+Committed Instructions: 10963 Cycles: 10000 IPC: 1.096300 
+Committed Instructions: 10187 Cycles: 10000 IPC: 1.018700 
+Committed Instructions: 8384 Cycles: 10000 IPC: 0.838400 
+Committed Instructions: 10632 Cycles: 10000 IPC: 1.063200 
+Committed Instructions: 8607 Cycles: 10000 IPC: 0.860700 
+Committed Instructions: 10455 Cycles: 10000 IPC: 1.045500 
+Committed Instructions: 12588 Cycles: 10000 IPC: 1.258800 
+Committed Instructions: 11935 Cycles: 10000 IPC: 1.193500 
+Committed Instructions: 8269 Cycles: 10000 IPC: 0.826900 
+Committed Instructions: 12767 Cycles: 10000 IPC: 1.276700 
+Committed Instructions: 11880 Cycles: 10000 IPC: 1.188000 
+Committed Instructions: 10781 Cycles: 10000 IPC: 1.078100 
+Committed Instructions: 13080 Cycles: 10000 IPC: 1.308000 
+Committed Instructions: 10969 Cycles: 10000 IPC: 1.096900 
+Committed Instructions: 8380 Cycles: 10000 IPC: 0.838000 
+Committed Instructions: 8576 Cycles: 10000 IPC: 0.857600 
+Committed Instructions: 9832 Cycles: 10000 IPC: 0.983200 
+Committed Instructions: 9283 Cycles: 10000 IPC: 0.928300 
+Committed Instructions: 9347 Cycles: 10000 IPC: 0.934700 
+Committed Instructions: 10574 Cycles: 10000 IPC: 1.057400 
+Committed Instructions: 11683 Cycles: 10000 IPC: 1.168300 
+Committed Instructions: 11830 Cycles: 10000 IPC: 1.183000 
+Committed Instructions: 11198 Cycles: 10000 IPC: 1.119800 
+Committed Instructions: 9467 Cycles: 10000 IPC: 0.946700 
+Committed Instructions: 8273 Cycles: 10000 IPC: 0.827300 
+Committed Instructions: 11407 Cycles: 10000 IPC: 1.140700 
+Committed Instructions: 12683 Cycles: 10000 IPC: 1.268300 
+Committed Instructions: 9494 Cycles: 10000 IPC: 0.949400 
+Committed Instructions: 9603 Cycles: 10000 IPC: 0.960300 
+Committed Instructions: 10593 Cycles: 10000 IPC: 1.059300 
+Committed Instructions: 10254 Cycles: 10000 IPC: 1.025400 
+Committed Instructions: 9111 Cycles: 10000 IPC: 0.911100 
+Committed Instructions: 10130 Cycles: 10000 IPC: 1.013000 
+Committed Instructions: 11715 Cycles: 10000 IPC: 1.171500 
+Committed Instructions: 11762 Cycles: 10000 IPC: 1.176200 
+Committed Instructions: 12117 Cycles: 10000 IPC: 1.211700 
+Committed Instructions: 11570 Cycles: 10000 IPC: 1.157000 
+Committed Instructions: 9642 Cycles: 10000 IPC: 0.964200 
+Committed Instructions: 10506 Cycles: 10000 IPC: 1.050600 
+Committed Instructions: 12055 Cycles: 10000 IPC: 1.205500 
+Committed Instructions: 12022 Cycles: 10000 IPC: 1.202200 
+Committed Instructions: 12244 Cycles: 10000 IPC: 1.224400 
+Committed Instructions: 11470 Cycles: 10000 IPC: 1.147000 
+Committed Instructions: 9601 Cycles: 10000 IPC: 0.960100 
+Committed Instructions: 10257 Cycles: 10000 IPC: 1.025700 
+Committed Instructions: 11735 Cycles: 10000 IPC: 1.173500 
+Committed Instructions: 11845 Cycles: 10000 IPC: 1.184500 
+Committed Instructions: 12713 Cycles: 10000 IPC: 1.271300 
+Committed Instructions: 11188 Cycles: 10000 IPC: 1.118800 
+Committed Instructions: 10298 Cycles: 10000 IPC: 1.029800 
+Committed Instructions: 11124 Cycles: 10000 IPC: 1.112400 
+Committed Instructions: 11586 Cycles: 10000 IPC: 1.158600 
+Committed Instructions: 9388 Cycles: 10000 IPC: 0.938800 
+Committed Instructions: 12102 Cycles: 10000 IPC: 1.210200 
+Committed Instructions: 11181 Cycles: 10000 IPC: 1.118100 
+Committed Instructions: 9644 Cycles: 10000 IPC: 0.964400 
+Committed Instructions: 10535 Cycles: 10000 IPC: 1.053500 
+Committed Instructions: 9398 Cycles: 10000 IPC: 0.939800 
+Committed Instructions: 10278 Cycles: 10000 IPC: 1.027800 
+Committed Instructions: 10481 Cycles: 10000 IPC: 1.048100 
+Committed Instructions: 9661 Cycles: 10000 IPC: 0.966100 
+Committed Instructions: 10940 Cycles: 10000 IPC: 1.094000 
+Committed Instructions: 12111 Cycles: 10000 IPC: 1.211100 
+Committed Instructions: 9452 Cycles: 10000 IPC: 0.945200 
+Committed Instructions: 12574 Cycles: 10000 IPC: 1.257400 
+Committed Instructions: 10997 Cycles: 10000 IPC: 1.099700 
+Committed Instructions: 11308 Cycles: 10000 IPC: 1.130800 
+Committed Instructions: 12113 Cycles: 10000 IPC: 1.211300 
+Committed Instructions: 10487 Cycles: 10000 IPC: 1.048700 
+Committed Instructions: 10527 Cycles: 10000 IPC: 1.052700 
+Committed Instructions: 8208 Cycles: 10000 IPC: 0.820800 
+Committed Instructions: 7740 Cycles: 10000 IPC: 0.774000 
+Committed Instructions: 7906 Cycles: 10000 IPC: 0.790600 
+Committed Instructions: 9263 Cycles: 10000 IPC: 0.926300 
+Committed Instructions: 6647 Cycles: 10000 IPC: 0.664700 
+Committed Instructions: 9375 Cycles: 10000 IPC: 0.937500 
+Committed Instructions: 6258 Cycles: 10000 IPC: 0.625800 
+Committed Instructions: 8555 Cycles: 10000 IPC: 0.855500 
+Committed Instructions: 8124 Cycles: 10000 IPC: 0.812400 
+Committed Instructions: 9793 Cycles: 10000 IPC: 0.979300 
+Committed Instructions: 8848 Cycles: 10000 IPC: 0.884800 
+Committed Instructions: 8448 Cycles: 10000 IPC: 0.844800 
+Committed Instructions: 9577 Cycles: 10000 IPC: 0.957700 
+Committed Instructions: 12073 Cycles: 10000 IPC: 1.207300 
+Committed Instructions: 12298 Cycles: 10000 IPC: 1.229800 
+Committed Instructions: 8158 Cycles: 10000 IPC: 0.815800 
+Committed Instructions: 10456 Cycles: 10000 IPC: 1.045600 
+Committed Instructions: 11719 Cycles: 10000 IPC: 1.171900 
+Committed Instructions: 8450 Cycles: 10000 IPC: 0.845000 
+Committed Instructions: 9580 Cycles: 10000 IPC: 0.958000 
+Committed Instructions: 9670 Cycles: 10000 IPC: 0.967000 
+Committed Instructions: 8999 Cycles: 10000 IPC: 0.899900 
+Committed Instructions: 9053 Cycles: 10000 IPC: 0.905300 
+Committed Instructions: 10166 Cycles: 10000 IPC: 1.016600 
+Committed Instructions: 9681 Cycles: 10000 IPC: 0.968100 
+Committed Instructions: 11394 Cycles: 10000 IPC: 1.139400 
+Committed Instructions: 11504 Cycles: 10000 IPC: 1.150400 
+Committed Instructions: 11195 Cycles: 10000 IPC: 1.119500 
+Committed Instructions: 9880 Cycles: 10000 IPC: 0.988000 
+Committed Instructions: 8692 Cycles: 10000 IPC: 0.869200 
+Committed Instructions: 11151 Cycles: 10000 IPC: 1.115100 
+Committed Instructions: 9562 Cycles: 10000 IPC: 0.956200 
+Committed Instructions: 9847 Cycles: 10000 IPC: 0.984700 
+Committed Instructions: 10283 Cycles: 10000 IPC: 1.028300 
+Committed Instructions: 9271 Cycles: 10000 IPC: 0.927100 
+Committed Instructions: 10576 Cycles: 10000 IPC: 1.057600 
+Committed Instructions: 10329 Cycles: 10000 IPC: 1.032900 
+Committed Instructions: 11376 Cycles: 10000 IPC: 1.137600 
+Committed Instructions: 10988 Cycles: 10000 IPC: 1.098800 
+Committed Instructions: 10159 Cycles: 10000 IPC: 1.015900 
+Committed Instructions: 11509 Cycles: 10000 IPC: 1.150900 
+Committed Instructions: 11405 Cycles: 10000 IPC: 1.140500 
+Committed Instructions: 11500 Cycles: 10000 IPC: 1.150000 
+Committed Instructions: 10204 Cycles: 10000 IPC: 1.020400 
+Committed Instructions: 11369 Cycles: 10000 IPC: 1.136900 
+Committed Instructions: 11161 Cycles: 10000 IPC: 1.116100 
+Committed Instructions: 10337 Cycles: 10000 IPC: 1.033700 
+Committed Instructions: 11101 Cycles: 10000 IPC: 1.110100 
+Committed Instructions: 11412 Cycles: 10000 IPC: 1.141200 
+Committed Instructions: 8952 Cycles: 10000 IPC: 0.895200 
+Committed Instructions: 9006 Cycles: 10000 IPC: 0.900600 
+Committed Instructions: 9761 Cycles: 10000 IPC: 0.976100 
+Committed Instructions: 10024 Cycles: 10000 IPC: 1.002400 
+Committed Instructions: 10495 Cycles: 10000 IPC: 1.049500 
+Committed Instructions: 10593 Cycles: 10000 IPC: 1.059300 
+Committed Instructions: 10395 Cycles: 10000 IPC: 1.039500 
+Committed Instructions: 8424 Cycles: 10000 IPC: 0.842400 
+Committed Instructions: 9237 Cycles: 10000 IPC: 0.923700 
+Committed Instructions: 11494 Cycles: 10000 IPC: 1.149400 
+Committed Instructions: 11826 Cycles: 10000 IPC: 1.182600 
+Committed Instructions: 12268 Cycles: 10000 IPC: 1.226800 
+Committed Instructions: 12412 Cycles: 10000 IPC: 1.241200 
+Committed Instructions: 11513 Cycles: 10000 IPC: 1.151300 
+Committed Instructions: 9870 Cycles: 10000 IPC: 0.987000 
+Committed Instructions: 10651 Cycles: 10000 IPC: 1.065100 
+Committed Instructions: 10596 Cycles: 10000 IPC: 1.059600 
+Committed Instructions: 11008 Cycles: 10000 IPC: 1.100800 
+Committed Instructions: 10373 Cycles: 10000 IPC: 1.037300 
+Committed Instructions: 10331 Cycles: 10000 IPC: 1.033100 
+Committed Instructions: 11703 Cycles: 10000 IPC: 1.170300 
+Committed Instructions: 12215 Cycles: 10000 IPC: 1.221500 
+Committed Instructions: 10199 Cycles: 10000 IPC: 1.019900 
+Committed Instructions: 8325 Cycles: 10000 IPC: 0.832500 
+Committed Instructions: 7838 Cycles: 10000 IPC: 0.783800 
+Committed Instructions: 10957 Cycles: 10000 IPC: 1.095700 
+Committed Instructions: 9133 Cycles: 10000 IPC: 0.913300 
+Committed Instructions: 13034 Cycles: 10000 IPC: 1.303400 
+Committed Instructions: 13225 Cycles: 10000 IPC: 1.322500 
+Committed Instructions: 9436 Cycles: 10000 IPC: 0.943600 
+Committed Instructions: 12038 Cycles: 10000 IPC: 1.203800 
+Committed Instructions: 11876 Cycles: 10000 IPC: 1.187600 
+Committed Instructions: 10104 Cycles: 10000 IPC: 1.010400 
+Committed Instructions: 9435 Cycles: 10000 IPC: 0.943500 
+Committed Instructions: 10504 Cycles: 10000 IPC: 1.050400 
+Committed Instructions: 8786 Cycles: 10000 IPC: 0.878600 
+Committed Instructions: 12147 Cycles: 10000 IPC: 1.214700 
+Committed Instructions: 10459 Cycles: 10000 IPC: 1.045900 
+Committed Instructions: 9726 Cycles: 10000 IPC: 0.972600 
+Committed Instructions: 9847 Cycles: 10000 IPC: 0.984700 
+Committed Instructions: 10441 Cycles: 10000 IPC: 1.044100 
+Committed Instructions: 10267 Cycles: 10000 IPC: 1.026700 
+Committed Instructions: 9387 Cycles: 10000 IPC: 0.938700 
+Committed Instructions: 10345 Cycles: 10000 IPC: 1.034500 
+Committed Instructions: 11833 Cycles: 10000 IPC: 1.183300 
+Committed Instructions: 12296 Cycles: 10000 IPC: 1.229600 
+Committed Instructions: 12977 Cycles: 10000 IPC: 1.297700 
+Committed Instructions: 12612 Cycles: 10000 IPC: 1.261200 
+Committed Instructions: 11078 Cycles: 10000 IPC: 1.107800 
+Committed Instructions: 11698 Cycles: 10000 IPC: 1.169800 
+Committed Instructions: 11386 Cycles: 10000 IPC: 1.138600 
+Committed Instructions: 11502 Cycles: 10000 IPC: 1.150200 
+Committed Instructions: 10872 Cycles: 10000 IPC: 1.087200 
+Committed Instructions: 10766 Cycles: 10000 IPC: 1.076600 
+Committed Instructions: 10288 Cycles: 10000 IPC: 1.028800 
+Committed Instructions: 11961 Cycles: 10000 IPC: 1.196100 
+Committed Instructions: 10999 Cycles: 10000 IPC: 1.099900 
+Committed Instructions: 12439 Cycles: 10000 IPC: 1.243900 
+Committed Instructions: 8604 Cycles: 10000 IPC: 0.860400 
+Committed Instructions: 9487 Cycles: 10000 IPC: 0.948700 
+Committed Instructions: 10191 Cycles: 10000 IPC: 1.019100 
+Committed Instructions: 10235 Cycles: 10000 IPC: 1.023500 
+Committed Instructions: 10179 Cycles: 10000 IPC: 1.017900 
+Committed Instructions: 12844 Cycles: 10000 IPC: 1.284400 
+Committed Instructions: 11635 Cycles: 10000 IPC: 1.163500 
+Committed Instructions: 11094 Cycles: 10000 IPC: 1.109400 
+Committed Instructions: 12527 Cycles: 10000 IPC: 1.252700 
+Committed Instructions: 10548 Cycles: 10000 IPC: 1.054800 
+Committed Instructions: 9980 Cycles: 10000 IPC: 0.998000 
+Committed Instructions: 9996 Cycles: 10000 IPC: 0.999600 
+Committed Instructions: 9629 Cycles: 10000 IPC: 0.962900 
+Committed Instructions: 9381 Cycles: 10000 IPC: 0.938100 
+Committed Instructions: 8191 Cycles: 10000 IPC: 0.819100 
+Committed Instructions: 12265 Cycles: 10000 IPC: 1.226500 
+Committed Instructions: 10820 Cycles: 10000 IPC: 1.082000 
+Committed Instructions: 10328 Cycles: 10000 IPC: 1.032800 
+Committed Instructions: 10621 Cycles: 10000 IPC: 1.062100 
+Committed Instructions: 10744 Cycles: 10000 IPC: 1.074400 
+Committed Instructions: 10970 Cycles: 10000 IPC: 1.097000 
+Committed Instructions: 9564 Cycles: 10000 IPC: 0.956400 
+Committed Instructions: 10989 Cycles: 10000 IPC: 1.098900 
+Committed Instructions: 11322 Cycles: 10000 IPC: 1.132200 
+Committed Instructions: 13014 Cycles: 10000 IPC: 1.301400 
+Committed Instructions: 12931 Cycles: 10000 IPC: 1.293100 
+Committed Instructions: 12913 Cycles: 10000 IPC: 1.291300 
+Committed Instructions: 10388 Cycles: 10000 IPC: 1.038800 
+Committed Instructions: 10552 Cycles: 10000 IPC: 1.055200 
+Committed Instructions: 10715 Cycles: 10000 IPC: 1.071500 
+Committed Instructions: 10698 Cycles: 10000 IPC: 1.069800 
+Committed Instructions: 11303 Cycles: 10000 IPC: 1.130300 
+Committed Instructions: 10693 Cycles: 10000 IPC: 1.069300 
+Committed Instructions: 10930 Cycles: 10000 IPC: 1.093000 
+Committed Instructions: 10999 Cycles: 10000 IPC: 1.099900 
+Committed Instructions: 10739 Cycles: 10000 IPC: 1.073900 
+Committed Instructions: 11382 Cycles: 10000 IPC: 1.138200 
+Committed Instructions: 11536 Cycles: 10000 IPC: 1.153600 
+Committed Instructions: 9722 Cycles: 10000 IPC: 0.972200 
+Committed Instructions: 9605 Cycles: 10000 IPC: 0.960500 
+Committed Instructions: 10130 Cycles: 10000 IPC: 1.013000 
+Committed Instructions: 10045 Cycles: 10000 IPC: 1.004500 
+Committed Instructions: 10280 Cycles: 10000 IPC: 1.028000 
+Committed Instructions: 10243 Cycles: 10000 IPC: 1.024300 
+Committed Instructions: 10363 Cycles: 10000 IPC: 1.036300 
+Committed Instructions: 10769 Cycles: 10000 IPC: 1.076900 
+Committed Instructions: 10722 Cycles: 10000 IPC: 1.072200 
+Committed Instructions: 11773 Cycles: 10000 IPC: 1.177300 
+Committed Instructions: 11752 Cycles: 10000 IPC: 1.175200 
+Committed Instructions: 9744 Cycles: 10000 IPC: 0.974400 
+Committed Instructions: 10018 Cycles: 10000 IPC: 1.001800 
+Committed Instructions: 11516 Cycles: 10000 IPC: 1.151600 
+Committed Instructions: 9999 Cycles: 10000 IPC: 0.999900 
+Committed Instructions: 10738 Cycles: 10000 IPC: 1.073800 
+Committed Instructions: 9911 Cycles: 10000 IPC: 0.991100 
+Committed Instructions: 9317 Cycles: 10000 IPC: 0.931700 
+Committed Instructions: 10627 Cycles: 10000 IPC: 1.062700 
+Committed Instructions: 10846 Cycles: 10000 IPC: 1.084600 
+Committed Instructions: 10846 Cycles: 10000 IPC: 1.084600 
+Committed Instructions: 10103 Cycles: 10000 IPC: 1.010300 
+Committed Instructions: 9935 Cycles: 10000 IPC: 0.993500 
+Committed Instructions: 11757 Cycles: 10000 IPC: 1.175700 
+Committed Instructions: 11357 Cycles: 10000 IPC: 1.135700 
+Committed Instructions: 10879 Cycles: 10000 IPC: 1.087900 
+Committed Instructions: 9654 Cycles: 10000 IPC: 0.965400 
+Committed Instructions: 11058 Cycles: 10000 IPC: 1.105800 
+Committed Instructions: 10604 Cycles: 10000 IPC: 1.060400 
+***** exiting (allinstructions) *****
+Contexts: 1  Fetch Width: 8
+No of useful instructions fetched: 10000051 (10.23% proc util.)
+No of total instructions fetched:  11841257 (12.11% proc util.)
+ includes 380941 misfetch (3.2%), 1460265 (12.3%) wrong-path fetches
+ and 0 non-WP flushed for failed lock and other (0.0%)
+No of useful instructions issued/executed: 10000094 (10.23% proc util.)
+No of total instructions issued/executed:  10581030 (10.82% proc util.)
+ includes 580936 wrong-path (5.5%) insts and 0 flushed (0.0%)
+    fp 126, 0.00%
+    synch 0, 0.00%
+    integer 7046568, 66.60%
+    load/store 3534336, 33.40%
+No of cycles taken: 12220233
+Parallelism [ 0.818,] = 0.818
+Core 0 scheduling stats
+  Avg pre-sched occupancy of IQ: 6.54 (20.43%), FQ: 0.00 (0.00%)
+  Rename IQ full cyc: 182051 (1.49%), FQ: 0 (0.00%)
+  Avg occupancy of I regs: 20.51 (32.05%), FP regs: 0.00 (0.00%)
+  Rename I regs full cyc: 0 (0.00%), FP regs: 0 (0.00%)
+  Avg occupancy of LSQ: 10.81 (45.02%)
+  Rename LSQ full cyc: 2938830 (24.05%)
+  Avg occupancy of alus IALUS: 0.58 (28.83%), FPALUS: 0.00 (0.00%), LDST: 0.29 (28.92%)
+  Issue conflicts, I unit: 8277232 (0.68), FP: 11 (0.00), LDST: 5544528 (0.45)
+  Issue conflicts, D-MSHR: 0 (0.00), mb: 2950 (0.00), wmb: 0 (0.00), mem: 2127206 (0.17)
+  Total conflicts (non-issued, ready insts): 13456097 (1.10)
+  Total conflict cyc buckets: 1298932 1583672 1209827 263394 352 0 0 0 0 0 0 0 0 0 0 0
+Context 0 scheduling stats
+  Avg occupancy of ROB: 26.20 (40.93%)
+  Fetch I-MSHR full: 0 (0.00%)
+  Rename ROB full cyc: 330327 (2.70%), fetch alist full cyc: 0 (0.00%)
+Commits: [ 10000000 ] = 10000000
+Syscalls: [ 21 ] = 21
+In-flight: [ 54 ] = 54
+App statistics
+  ID_order: [ 0 ]
+  insts: [ 21367392 ]
+  commits: [ 10000000 ]
+  discards: [ 1367335 ]
+  syscalls: [ 23 ]
+  total_cyc: [ 12220233 ]
+  sched_cyc: [ 12220193 ]
+  sched_count: [ 1 ]
+  commits/schedcyc: [ 0.818 ]
+  commits/totalcyc: [ 0.818 ]
+  icache_miss_pct: [ 3.66 ]
+  dcache_accesses: [ 3418782 ]
+  dcache_non-merged_miss_pct: [ 3.16 ]
+  l2cache_accesses: [ 189435 ]
+  l2cache_non-merged_miss_pct: [ 20.18 ]
+  l3cache_accesses: [ 38076 ]
+  l3cache_non-merged_miss_pct: [ 47.57 ]
+  mem_accesses: [ 18214 ]
+  itlb_miss_pct: [ 0.00 ]
+  dtlb_miss_pct: [ 0.06 ]
+  bpred_miss_pct: [ 11.59 ]
+  retpred_miss_pct: [ 0.01 ]
+  avg_mem_delay_cyc: [ 11.2 ]
+  instq_conf_cyc/schedcyc_pct: [ 1.49 ]
+  long_mem_detected: [ 24536 ]
+  long_mem_flushed: [ 0 ]
+Cache Statistics
+Core 0:
+  Reads: 5202620   Writes: 793831
+  Hit times (excluding exec) from: L1=2, L2=14, L3=43, M=313
+  Ideal est. transfer bandwidth (bytes/cyc * banks * ports):
+          part    access     wb-to      fill
+           L1I        16        na       256
+           L1D        32        na       256
+            L2       256       256       256
+           Bus         8        na        32
+            L3        64        64        64
+           Mem     10.24     10.24        na
+  ICACHE: size: 64 KB assoc: 1
+  ICACHE: hits: 2483425 misses: 94244  Hit Ratio: 96.34%
+  ICACHE: coher misses: 0 invalidates: 0
+          wbfull_confs: 0
+  DCACHE: size: 64 KB assoc: 1
+  DCACHE: hits: 3310859 misses: 107923 writebacks: 45856  Hit Ratio: 96.84%
+  DCACHE: coher misses: 0 upgrade misses: 0
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0 
+  SCACHE: size: 128 KB assoc: 4
+  SCACHE: hits: 162001 misses: 40166 writebacks: 15065  Hit Ratio: 80.13%
+  SCACHE: coher misses: 0 upgrade misses: 0 
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0
+  Stalls for L2 MSHR conflicts: 0
+  ITLB: size: 48, misses 38, miss rate 0.00
+  DTLB: size: 128, misses 1685, miss rate 0.05
+  icache bank util. 0.054 0.069 0.060 0.056 0.063 0.042 0.044 0.050 
+  dcache bank util. 0.050 0.067 0.068 0.066 0.106 0.097 0.066 0.076 
+  L2 bank util. 0.006 0.007 0.007 0.005 0.008 0.005 0.005 0.005 
+Stall for miss queue full 0 cycles (0.00%)
+3CACHE: size: 4096 KB assoc: 16
+3CACHE: hits: 21245 misses: 18921  writebacks: 0  Hit Ratio: 52.89%
+3CACHE: wbfull_confs: 0
+avg mem delay 11.239
+Unified bus: 108379 xfers, 0 syncs, 12043641 idle_cyc, 0 sync_cyc, 0.014 util
+L3 util. = 0.007
+MemUnit stats: 18921 reads, 0 writes
+MemUnit bank util: 0.010 0.010 0.010 0.010 0.010 0.010 0.010 0.010 0.009 0.010 0.010 0.009 0.009 0.010 0.009 0.010
+Core 0:
+  branch prediction, hits = 688186, misses = 90256, hit rate = 88.41%
+  jump prediction, hits = 889555, misses = 140072, hit rate = 86.40%
+  return_stack prediction, hits = 196260, misses = 10, hit rate = 99.99%
+Commit group stats:
+  started 0, inflight 0, squashed 0, aborted 0, committed 0 (-nan% of started, -nan% of not-squashed)
+  blocked cyc/mean: [ 0/-nan ]
+GlobalAppMgr stats:
+  App state/cycle breakdown:
+    "cyc","ctx_run","ctx_stalled","ready","swapping","waiting"
+    "A0",8850044,3370150,0,39,0
+  App occupancy cycles on cores:
+    "cyc","C0"
+    "A0",12220233
+  App swap-ins on cores:
+    "events","C0"
+    "A0",1
+  Core "scheduled - stalled" TLP cycles:
+    "cyc",0,1
+    "C0",3370150,8850083
+  Core scheduled TLP cycles:
+    "cyc",0,1
+    "C0",0,12220233
+  App same-core fraction: [ -nan ]
+  App mean swapped-in cyc: [ 12220233 ]
+  App scheduled IPC: [ 0.818 ]
+  App L1D blocks on cores:
+    "blocks","C0"
+    "A0",1024
+  App L2 blocks on cores:
+    "blocks","C0"
+    "A0",2048
+  App L3 blocks: [ 18921 ]
+  App activate/deactivate timing stats:
+    A0
+      deact_halt: - (n=0)
+      deact_swapout: - (n=0)
+      deact_sum: - (n=0)
+      activ_fetch: 39/39/39 (n=1,sd=0)
+      activ_commit: 39/39/39 (n=1,sd=0)
+      migrate_fetch: - (n=0)
+      migrate_commit: - (n=0)
+GlobalAdaptMgr Stats:
+  last_occupancy_per_ctx
+    ROB   49 
+    IQ    17 
+    FQ    0 
+    IREG  46 
+    FREG  0 
+    LSQ   10 
+  max_occupancy_per_ctx
+    ROB   64 
+    IQ    32 
+    FQ    7 
+    IREG  64 
+    FREG  31 
+    LSQ   24 
+  resource_size_per_ctx
+    ROB   48 
+    IQ    24 
+    FQ    24 
+    IREG  48 
+    FREG  48 
+    LSQ   18 
+total IPC 10000051/12220233 = 0.818
+
+--Sim'd 1.222e+07 cyc, 1.000e+07 insts in 11.90/0.04000/11.93(100.0%) sec
+--Sim rate: 1.027e+06 cyc/s, 8.406e+05 inst/s
+--Total run time: 12.24/0.04400/12.35(99.51%) sec
